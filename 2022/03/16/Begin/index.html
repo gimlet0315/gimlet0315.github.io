@@ -87,7 +87,7 @@
 <meta property="og:description" content="今天遇到了很多bug，稍微记录一下首先就是hexo init报错，Cannot find module ‘hexo’ from xxx后来先是更改了管理员权限，把nodejs权限改成users：完全控制然后又用npm cache verify, npm cache clean –forcenpm cache clean –force之后成功了。 不过插一下前情：本来我的电脑是固态硬盘，而不是跟的教">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-16T12:53:31.000Z">
-<meta property="article:modified_time" content="2022-03-16T13:13:17.786Z">
+<meta property="article:modified_time" content="2022-03-16T13:23:15.039Z">
 <meta property="article:author" content="Gimlet">
 <meta name="twitter:card" content="summary">
 
@@ -303,6 +303,7 @@
 <p>不过插一下前情：<br>本来我的电脑是固态硬盘，而不是跟的教程里的分C、D盘。所以在更改环境变量的时候出了问题<br>1，新建node_cache、node_global文件夹之后，改系统变量。不过我当时node_global文件夹下还未生成node_modules子文件夹<br>2，更改用户变量后，明明已经把Roaming下npm变量删掉了，结果后来重启重新查看的时候发现不知道什么时候又出来了<br>3，因为2，导致我很多包比如webpack、hexo全都按到了Roaming&#x2F;npm下，后来又重复步骤很多次<br>4，接着就是开头的问题，在blog文件夹下安装hexo，一直安不了。</p>
 <p>总之，虽然不清楚到底是权限还是变量没配好的原因，总算是又继续朝后推进了一点点</p>
 <p>后来就比较顺利了。稍微说一下部署next主题时遇到的问题<br>next默认四个主题：Muse、 Mist、Pisces、 Gemini，其中有一些设置只是only for（Muse、 Mist）。我折腾主题的时候，可能因为改了一些显示，比如时间线和目录之类的，直接导致网页打开白板。我非常讨厌bug，加上又是在git bush里下的命令，所以没办法，只能慢慢找。不过git bush还是非常人性化的，直接给我标出了文件的哪一行，config.yml注释也很清晰，所以最后还是比较顺利。</p>
+<p>最后说一下博客计划实现的效果：<br>1，鼠标。看了一些别人的博客，光标会有好看的效果<br>2，时间轴。这个好像是next自带的，要研究一下<br>3，能不能做一个需要密码进入的页面？<br>4，博文排版。调字体、设置标题、加图片<br>5，背景和网页排版。这个暂时还没有一个具体的方案。</p>
 
       
     </div>
@@ -327,15 +328,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/03/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/03/16/%E7%99%BD%E9%A9%AC%E8%B5%B0%E8%BF%87%E5%A4%A9%E4%BA%AE/" rel="prev" title="白马走过天亮">
+                白马走过天亮 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
