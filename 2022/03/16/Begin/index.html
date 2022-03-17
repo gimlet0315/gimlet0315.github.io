@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,7 +87,7 @@
 <meta property="og:description" content="hexo-theme-next版本：5.1.4（为什么我的版本这么低😓）hexo版本：6.1.0 今天遇到了很多bug，稍微记录一下首先就是hexo init报错，Cannot find module ‘hexo’ from xxx后来先是更改了管理员权限，把nodejs权限改成users：完全控制然后又用npm cache verify, npm cache clean –forcenpm c">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-16T12:53:31.000Z">
-<meta property="article:modified_time" content="2022-03-17T02:35:23.279Z">
+<meta property="article:modified_time" content="2022-03-17T03:34:42.922Z">
 <meta property="article:author" content="Gimlet">
 <meta name="twitter:card" content="summary">
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Gemini',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -315,6 +315,8 @@
 <p>总之，虽然不清楚到底是权限还是变量没配好的原因，总算是又继续朝后推进了一点点</p>
 <p>后来就比较顺利了。稍微说一下部署next主题时遇到的问题<br>next默认四个主题：Muse、 Mist、Pisces、 Gemini，其中有一些设置只是only for（Muse、 Mist）。我折腾主题的时候，可能因为改了一些显示，比如时间线和目录之类的，直接导致网页打开白板。我非常讨厌bug，加上又是在git bush里下的命令，所以没办法，只能慢慢找。不过git bush还是非常人性化的，直接给我标出了文件的哪一行，config.yml注释也很清晰，所以最后还是比较顺利。</p>
 <p>最后说一下博客计划实现的效果：<br>1，鼠标。看了一些别人的博客，光标会有好看的效果<br>2，时间轴。这个好像是next自带的，要研究一下<br>3，能不能做一个需要密码进入的页面？<br>4，博文排版。调字体、设置标题、加图片<br>5，背景和网页排版。这个暂时还没有一个具体的方案。</p>
+<p>一些only for：<br>1，sidebar:</p>
+<h1 id="Sidebar-Position-available-value-left-right-only-for-Pisces-Gemini"><a href="#Sidebar-Position-available-value-left-right-only-for-Pisces-Gemini" class="headerlink" title="Sidebar Position, available value: left | right (only for Pisces | Gemini)."></a>Sidebar Position, available value: left | right (only for Pisces | Gemini).</h1><p>2，Sidebar Display, available value (only for Muse | Mist):<br>3，Sidebar offset from top menubar in pixels (only for Pisces | Gemini).<br>4，Back to top in sidebar (only for Pisces | Gemini).<br>5， Enable sidebar on narrow view (only for Muse | Mist).<br>6， coll_header: slideLeftIn<br>    # Only for Pisces | Gemini.<br>    sidebar: slideUpIn<br>大概就是这些</p>
 
       
     </div>
@@ -403,8 +405,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -447,6 +458,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Sidebar-Position-available-value-left-right-only-for-Pisces-Gemini"><span class="nav-number">1.</span> <span class="nav-text">Sidebar Position, available value: left | right (only for Pisces | Gemini).</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -478,7 +505,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
