@@ -364,9 +364,21 @@
 
       
         
-          <p>对学过的排序算法做一个总结，不包括代码（代码废的卑微）<br>假设均为升序</p>
-<h2 id="蛮力法"><a href="#蛮力法" class="headerlink" title="蛮力法"></a>蛮力法</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>简单来说，每次找到最小值放在开头<br>规范一点：<br>1，将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>2，在无序区找出最小的值，将其与无序组第一个值交换，这样，有序组就+1，而无序组待排序列-1；<br>3，重复第二步，直到无序区只剩下一个记录。</p>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>简单来说，有点像小学体育课，老师两两比较身高，交换位置<br>规范一点：<br>1，（同上）将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>2，对无序区从左往右（或从前向后，随便）依次比较相邻记录，从而使较小值前移，较大值后移。一般来说，每次遍历后可以将最大值放到最后；<br>3，重复第二步，直到序列中无反序数对。</p>
+          <p>对学过的排序算法做一个总结，不包括代码（代码废的卑微）<br>
+假设均为升序</p>
+<h2 id="蛮力法">蛮力法</h2>
+<h3 id="选择排序">选择排序</h3>
+<p>简单来说，每次找到最小值放在开头<br>
+规范一点：<br>
+1，将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>
+2，在无序区找出最小的值，将其与无序组第一个值交换，这样，有序组就+1，而无序组待排序列-1；<br>
+3，重复第二步，直到无序区只剩下一个记录。</p>
+<h3 id="冒泡排序">冒泡排序</h3>
+<p>简单来说，有点像小学体育课，老师两两比较身高，交换位置<br>
+规范一点：<br>
+1，（同上）将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>
+2，对无序区从左往右（或从前向后，随便）依次比较相邻记录，从而使较小值前移，较大值后移。一般来说，每次遍历后可以将最大值放到最后；<br>
+3，重复第二步，直到序列中无反序数对。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2022/03/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#more" rel="contents">
@@ -490,7 +502,7 @@
 
       
         
-          <h2 id="作者言叔夏"><a href="#作者言叔夏" class="headerlink" title="作者言叔夏"></a>作者言叔夏</h2>
+          <h2 id="作者言叔夏">作者言叔夏</h2>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2022/03/16/%E7%99%BD%E9%A9%AC%E8%B5%B0%E8%BF%87%E5%A4%A9%E4%BA%AE/#more" rel="contents">
@@ -636,8 +648,13 @@
 
       
         
-          <p>hexo-theme-next版本：5.1.4（为什么我的版本这么低😓）<br>hexo版本：6.1.0</p>
-<p>今天遇到了很多bug，稍微记录一下<br>首先就是hexo init报错，Cannot find module ‘hexo’ from xxx<br>后来先是更改了管理员权限，把nodejs权限改成users：完全控制<br>然后又用npm cache verify, npm cache clean –force<br>npm cache clean –force之后成功了。</p>
+          <p>hexo-theme-next版本：5.1.4（为什么我的版本这么低😓）<br>
+hexo版本：6.1.0</p>
+<p>今天遇到了很多bug，稍微记录一下<br>
+首先就是hexo init报错，Cannot find module ‘hexo’ from xxx<br>
+后来先是更改了管理员权限，把nodejs权限改成users：完全控制<br>
+然后又用npm cache verify, npm cache clean --force<br>
+npm cache clean --force之后成功了。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2022/03/16/Begin/#more" rel="contents">
