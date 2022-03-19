@@ -272,6 +272,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/19/picture-test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gimlet's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/03/19/picture-test/" itemprop="url">picture test</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-19T13:08:06+08:00">
+                2022-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/picture-test/0060GhxGgy1h0afu5hh2nj30u01407bj.jpg" alt="img"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -494,16 +614,7 @@
       
         
           
-            <p>bug以及希望实现的效果记录：2022-03-18<br>
-1，文章侧边栏点击一级目录无法跳转<br>
-2，表格的数学公式无法正确显示（数学公式包已经安装了）<br>
-3，首页内容想改一下，不想用文章预览<br>
-4，文章字体、颜色<br>
-5，插入代码块<br>
-6，音乐播放<br>
-7，加一个动态/说说的模块<br>
-8，太吓人了！看板娘啥时候出现的？当时只是把包下了下来，但是按教程，版本不太对，本地看不到效果，就没管了；结果刚刚打开居然有一个看板娘！但是我配置文件，无论是根目录还是主题目录下的配置文件，都没有找到live2D的配置信息啊？再说我当时下的是一只黑猫（失败了），不是萌妹。当时报错后瞄了一眼，好像是包括了所有的模型。<br>
-9，博客的图片插不进去……本地都看不到……</p>
+            <p>bug以及希望实现的效果记录：2022-03-18<br>1，文章侧边栏点击一级目录无法跳转<br>2，表格的数学公式无法正确显示（数学公式包已经安装了）<br>3，首页内容想改一下，不想用文章预览<br>4，文章字体、颜色<br>5，插入代码块<br>6，音乐播放<br>7，加一个动态&#x2F;说说的模块<br>8，太吓人了！看板娘啥时候出现的？当时只是把包下了下来，但是按教程，版本不太对，本地看不到效果，就没管了；结果刚刚打开居然有一个看板娘！但是我配置文件，无论是根目录还是主题目录下的配置文件，都没有找到live2D的配置信息啊？再说我当时下的是一只黑猫（失败了），不是萌妹。当时报错后瞄了一眼，好像是包括了所有的模型。<br>9，博客的图片插不进去……本地都看不到……</p>
 
           
         
@@ -644,21 +755,9 @@
 
       
         
-          <p>对学过的排序算法做一个总结，不包括代码（代码废的卑微）<br>
-假设均为升序</p>
-<h2 id="蛮力法">蛮力法</h2>
-<h3 id="选择排序">选择排序</h3>
-<p>简单来说，每次找到最小值放在开头<br>
-规范一点：<br>
-1，将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>
-2，在无序区找出最小的值，将其与无序组第一个值交换，这样，有序组就+1，而无序组待排序列-1；<br>
-3，重复第二步，直到无序区只剩下一个记录。</p>
-<h3 id="冒泡排序">冒泡排序</h3>
-<p>简单来说，有点像小学体育课，老师两两比较身高，交换位置<br>
-规范一点：<br>
-1，（同上）将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>
-2，对无序区从左往右（或从前向后，随便）依次比较相邻记录，从而使较小值前移，较大值后移。一般来说，每次遍历后可以将最大值放到最后；<br>
-3，重复第二步，直到序列中无反序数对。</p>
+          <p>对学过的排序算法做一个总结，不包括代码（代码废的卑微）<br>假设均为升序</p>
+<h2 id="蛮力法"><a href="#蛮力法" class="headerlink" title="蛮力法"></a>蛮力法</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>简单来说，每次找到最小值放在开头<br>规范一点：<br>1，将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>2，在无序区找出最小的值，将其与无序组第一个值交换，这样，有序组就+1，而无序组待排序列-1；<br>3，重复第二步，直到无序区只剩下一个记录。</p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>简单来说，有点像小学体育课，老师两两比较身高，交换位置<br>规范一点：<br>1，（同上）将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>2，对无序区从左往右（或从前向后，随便）依次比较相邻记录，从而使较小值前移，较大值后移。一般来说，每次遍历后可以将最大值放到最后；<br>3，重复第二步，直到序列中无反序数对。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2022/03/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#more" rel="contents">
@@ -804,8 +903,7 @@
 
       
         
-          <h2 id="作者言叔夏">作者言叔夏</h2>
-<p>2011年许多人都结婚了，包括怎样也想不到的刘若英。我曾经不止一次听过身旁的同志友人们说唯一可能结婚的女性对象就是刘若英，“大概是因为她看起来非常淡泊的样子吧。”我对刘的印象一直停留在中学时代的《为爱痴狂》，土黄色垫肩大夹克的她在MV里彻彻底底地烧了一把吉他。我还记得那是第四台刚开始普遍的时代，有一个频道从半夜三四点开始就会阴魂不散地轮播着每天几乎一模一样的MV清单，没有主持人也没有任何旁白。这份列表大概以一个月左右作为周期会定期更新，大约是加入了每月新进榜的歌曲。有段时间，我总是在起床赶第一班公交车上学的五点钟时间，会反复地听到这首歌。</p>
+          <h2 id="作者言叔夏"><a href="#作者言叔夏" class="headerlink" title="作者言叔夏"></a>作者言叔夏</h2><p>2011年许多人都结婚了，包括怎样也想不到的刘若英。我曾经不止一次听过身旁的同志友人们说唯一可能结婚的女性对象就是刘若英，“大概是因为她看起来非常淡泊的样子吧。”我对刘的印象一直停留在中学时代的《为爱痴狂》，土黄色垫肩大夹克的她在MV里彻彻底底地烧了一把吉他。我还记得那是第四台刚开始普遍的时代，有一个频道从半夜三四点开始就会阴魂不散地轮播着每天几乎一模一样的MV清单，没有主持人也没有任何旁白。这份列表大概以一个月左右作为周期会定期更新，大约是加入了每月新进榜的歌曲。有段时间，我总是在起床赶第一班公交车上学的五点钟时间，会反复地听到这首歌。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2022/03/16/%E7%99%BD%E9%A9%AC%E8%B5%B0%E8%BF%87%E5%A4%A9%E4%BA%AE/#more" rel="contents">
@@ -951,13 +1049,8 @@
 
       
         
-          <p>hexo-theme-next版本：5.1.4（为什么我的版本这么低😓）<br>
-hexo版本：6.1.0</p>
-<p>今天遇到了很多bug，稍微记录一下<br>
-首先就是hexo init报错，Cannot find module ‘hexo’ from xxx<br>
-后来先是更改了管理员权限，把nodejs权限改成users：完全控制<br>
-然后又用npm cache verify, npm cache clean --force<br>
-npm cache clean --force之后成功了。</p>
+          <p>hexo-theme-next版本：5.1.4（为什么我的版本这么低😓）<br>hexo版本：6.1.0</p>
+<p>今天遇到了很多bug，稍微记录一下<br>首先就是hexo init报错，Cannot find module ‘hexo’ from xxx<br>后来先是更改了管理员权限，把nodejs权限改成users：完全控制<br>然后又用npm cache verify, npm cache clean –force<br>npm cache clean –force之后成功了。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2022/03/16/Begin/#more" rel="contents">
@@ -1044,7 +1137,7 @@ npm cache clean --force之后成功了。</p>
               
                 <a href="/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
