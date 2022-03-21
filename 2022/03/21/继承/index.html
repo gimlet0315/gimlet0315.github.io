@@ -111,15 +111,19 @@
 
 
 
+<meta name="description" content="根据一个类A创建出一个新类B的过程称为继承。其中A称为父类（基类），B称为子类（派生类）。子类除了自动具有原类的成员之外，还可以根据需要增加新成员。派生类是一个具有别的类（即父类）的属性和行为的新类，而派生类同样可以作为其他类的基类。类的派生&#x2F;继承，常用来表示类属关系，即Is-A，而并非构成。进行派生时，可对派生类做出如下几种变化：    增加新的数据成员； 增加新的函数成员； 重新定义">
 <meta property="og:type" content="article">
-<meta property="og:title" content="继承">
+<meta property="og:title" content="继承（Is-A）">
 <meta property="og:url" content="https://gimlettt.com/2022/03/21/%E7%BB%A7%E6%89%BF/index.html">
 <meta property="og:site_name" content="Gimlet&#39;s Blog">
+<meta property="og:description" content="根据一个类A创建出一个新类B的过程称为继承。其中A称为父类（基类），B称为子类（派生类）。子类除了自动具有原类的成员之外，还可以根据需要增加新成员。派生类是一个具有别的类（即父类）的属性和行为的新类，而派生类同样可以作为其他类的基类。类的派生&#x2F;继承，常用来表示类属关系，即Is-A，而并非构成。进行派生时，可对派生类做出如下几种变化：    增加新的数据成员； 增加新的函数成员； 重新定义">
 <meta property="og:locale">
+<meta property="og:image" content="https://gimlettt.com/2022/03/21/%E7%BB%A7%E6%89%BF/image-20220321173431682.png">
 <meta property="article:published_time" content="2022-03-21T08:19:41.000Z">
-<meta property="article:modified_time" content="2022-03-21T08:19:41.205Z">
+<meta property="article:modified_time" content="2022-03-21T09:41:57.766Z">
 <meta property="article:author" content="Gimlet">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gimlettt.com/2022/03/21/%E7%BB%A7%E6%89%BF/image-20220321173431682.png">
 
 
 
@@ -156,7 +160,7 @@
 
 <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
 
-  <title>继承 | Gimlet's Blog</title>
+  <title>继承（Is-A） | Gimlet's Blog</title>
   
 
 
@@ -290,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">继承</h1>
+          <h1 class="post-title" itemprop="name headline">继承（Is-A）</h1>
         
 
         <div class="post-meta">
@@ -312,6 +316,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/%E7%B1%BB%E4%B8%8E%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB/" itemprop="url" rel="index">
+                    <span itemprop="name">类与类的关系</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -340,7 +377,29 @@
       
 
       
-        
+        <p>根据一个类A创建出一个新类B的过程称为继承。其中A称为父类（基类），B称为子类（派生类）。子类除了自动具有原类的成员之外，还可以根据需要增加新成员。<br>派生类是一个具有别的类（即父类）的属性和行为的新类，而派生类同样可以作为其他类的基类。类的派生&#x2F;继承，常用来表示类属关系，即Is-A，而并非构成。进行派生时，可对派生类做出如下几种变化：  </p>
+<ol>
+<li>增加新的数据成员；</li>
+<li>增加新的函数成员；</li>
+<li>重新定义已有的成员函数；</li>
+<li>改变现有成员的属性。</li>
+</ol>
+<h1 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h1><p>根类：无基类派生而来，这种类的所有成员均可访问（private、public、protected）。<br>而不可访问（inaccessible）成员总是由基类继承而来。即要么是基类的不可访问成员， 要么是基类的私有成员。</p>
+<h2 id="公有继承public"><a href="#公有继承public" class="headerlink" title="公有继承public"></a>公有继承public</h2><p>基类的公有成员和保护成员，分别称为派生类的公有成员和保护成员，从而使得派生类可以访问。但派生类成员函数无法直接访问基类的私有成员。；在类外部，派生类对象可以访问继承下来的基类公有成员。<br>赋值兼容规则指的是，在公有继承的情况下，一个派生类的对象可以作为基类对象使用。如：<br>假定DerivedClass是由BaseClass公有继承而来，则有： </p>
+<ol>
+<li><p>派生类的对象可以赋值给基类的对象： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DerivedClass d;</span><br><span class="line">BaseClass b;</span><br><span class="line">b=d;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>派生类对象可以初始化基类的引用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DerivedClass d;</span><br><span class="line">BaseClass&amp; br=d;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>派生类对象的地址可以赋值给指向基类的指针：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DerivedClass d;</span><br><span class="line">BaseClass *pb=&amp;d;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="私有继承"><a href="#私有继承" class="headerlink" title="私有继承"></a>私有继承</h2><p>基类的公有成员和保护成员作为派生类的私有成员，可以被派生类的成员函数直接访问。但派生类的成员函数无法直接访问基类的私有成员。在外部，派生类无法访问基类的所有成员。<br>私有继承使公有成员函数性质发生了变化，被派生类封装和隐藏了，需要在派生类中增加新的外部接口。</p>
+<h2 id="保护继承"><a href="#保护继承" class="headerlink" title="保护继承"></a>保护继承</h2><p>基类的公有成员和保护成员作为派生类的保护成员，可以被派生类的成员函数直接访问。但派生类的成员函数无法直接访问基类的私有成员。在外部，派生类无法访问基类的所有成员。<br>但保护继承并未完全中止基类的功能。</p>
+<p><img src="/2022/03/21/%E7%BB%A7%E6%89%BF/image-20220321173431682.png" alt="image-20220321173431682"></p>
+<h1 id="单继承"><a href="#单继承" class="headerlink" title="单继承"></a>单继承</h1>
       
     </div>
     
@@ -373,6 +432,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/03/21/github/" rel="prev" title="github更新">
+                github更新 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -424,8 +487,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -440,7 +512,7 @@
               
                 <a href="/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -451,7 +523,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -492,6 +564,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="nav-number">1.</span> <span class="nav-text">访问控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E6%9C%89%E7%BB%A7%E6%89%BFpublic"><span class="nav-number">1.1.</span> <span class="nav-text">公有继承public</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E7%BB%A7%E6%89%BF"><span class="nav-number">1.2.</span> <span class="nav-text">私有继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E6%8A%A4%E7%BB%A7%E6%89%BF"><span class="nav-number">1.3.</span> <span class="nav-text">保护继承</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E7%BB%A7%E6%89%BF"><span class="nav-number">2.</span> <span class="nav-text">单继承</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

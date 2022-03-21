@@ -584,7 +584,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gimlettt.com/2022/03/21/%E7%BB%A7%E6%89%BF/">
+    <link itemprop="mainEntityOfPage" href="https://gimlettt.com/2022/03/21/github/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -603,7 +603,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2022/03/21/%E7%BB%A7%E6%89%BF/" itemprop="url">继承</a></h1>
+                <a class="post-title-link" href="/2022/03/21/github/" itemprop="url">github更新</a></h1>
         
 
         <div class="post-meta">
@@ -615,7 +615,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-21T16:19:41+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-21T17:59:42+08:00">
                 2022-03-21
               </time>
             
@@ -625,6 +625,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Github/" itemprop="url" rel="index">
+                    <span itemprop="name">Github</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -655,7 +677,22 @@
       
         
           
-            
+            <p>之前demo提交到GitHub上，前段时间改了很多但一直没提交。今天把它提交了。<br>跟老哥聊天的时候其实没什么概念，游戏demo那么多文件难道要我一个个找哪些是新加的哪些是改过的哪些是删除的？所以一股脑全部提交了。本来以为和博客提交更新差不多，但是搜了一下还是很不一样的。最起码博客没有commit（这个我理解为备注，或者只是一个解释性的说明，但是好像挺重要的，没有这个会报错）。</p>
+<ol>
+<li><p>git add .（add和.之间有个空格）;</p>
+</li>
+<li><p>git status;</p>
+</li>
+<li><p>git commit -m “命令名”</p>
+<p>跟前面说的一样，不会对代码本身做说明改动，只是一个说明，效果如下（“更新”即是我这次commit的命令名）：</p>
+<p><img src="/2022/03/21/github/image-20220321180552281.png" alt="image-20220321180552281"></p>
+<p><img src="/2022/03/21/github/image-20220321180652326.png" alt="image-20220321180652326"></p>
+</li>
+<li><p>git push origin master</p>
+</li>
+</ol>
+<p>其实和网上的代码不太一样。找的教程到第三步后其实还要提交什么ssh和邮箱、以及git remote add origin仓库地址之类的，最后也是push -u origin master，我嫌麻烦直接第四步，居然成功了。</p>
+
           
         
       
@@ -694,7 +731,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
   </nav>
 
 
@@ -740,7 +777,7 @@
               
                 <a href="/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -751,7 +788,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
