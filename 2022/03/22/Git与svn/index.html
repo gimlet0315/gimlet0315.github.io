@@ -111,17 +111,19 @@
 
 
 
-<meta name="description" content="对学过的排序算法做一个总结，不包括代码（代码废的卑微）假设均为升序 蛮力法选择排序简单来说，每次找到最小值放在开头规范一点：1，将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；2，在无序区找出最小的值，将其与无序组第一个值交换，这样，有序组就+1，而无序组待排序列-1；3，重复第二步，直到无序区只剩下一个记录。 冒泡排序简单来说，有点像小学体育课，老师两两比较身高，交换位置">
+<meta name="description" content="准备面试，似乎有关于Linux的考察，也提到了git与svn（Subversion），所以把搜集到的资料做一下整理。   关于我对git的第一印象。因为输入指令的形式太像cmd，所以一开始我把它理解为cmd和power shell类似的工具，但是今天搜了一下才知道，git和svn同属于“版本控制工具”，而cmd和shell属于“命令行解释器”，作用是在用户和内核（硬件的上层）之间起到通讯作用（也就">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法">
-<meta property="og:url" content="https://gimlettt.com/2022/03/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="Git与SVN">
+<meta property="og:url" content="https://gimlettt.com/2022/03/22/Git%E4%B8%8Esvn/index.html">
 <meta property="og:site_name" content="Gimlet&#39;s Blog">
-<meta property="og:description" content="对学过的排序算法做一个总结，不包括代码（代码废的卑微）假设均为升序 蛮力法选择排序简单来说，每次找到最小值放在开头规范一点：1，将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；2，在无序区找出最小的值，将其与无序组第一个值交换，这样，有序组就+1，而无序组待排序列-1；3，重复第二步，直到无序区只剩下一个记录。 冒泡排序简单来说，有点像小学体育课，老师两两比较身高，交换位置">
+<meta property="og:description" content="准备面试，似乎有关于Linux的考察，也提到了git与svn（Subversion），所以把搜集到的资料做一下整理。   关于我对git的第一印象。因为输入指令的形式太像cmd，所以一开始我把它理解为cmd和power shell类似的工具，但是今天搜了一下才知道，git和svn同属于“版本控制工具”，而cmd和shell属于“命令行解释器”，作用是在用户和内核（硬件的上层）之间起到通讯作用（也就">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-03-18T08:05:33.000Z">
-<meta property="article:modified_time" content="2022-03-18T09:29:52.370Z">
+<meta property="og:image" content="https://gimlettt.com/2022/03/22/Git%E4%B8%8Esvn/image-20220322011257119.png">
+<meta property="article:published_time" content="2022-03-21T16:27:55.000Z">
+<meta property="article:modified_time" content="2022-03-21T17:29:31.766Z">
 <meta property="article:author" content="Gimlet">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gimlettt.com/2022/03/22/Git%E4%B8%8Esvn/image-20220322011257119.png">
 
 
 
@@ -151,14 +153,14 @@
 
 
 
-  <link rel="canonical" href="https://gimlettt.com/2022/03/18/排序算法/"/>
+  <link rel="canonical" href="https://gimlettt.com/2022/03/22/Git与svn/"/>
 
 
 
 
 <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
 
-  <title>排序算法 | Gimlet's Blog</title>
+  <title>Git与SVN | Gimlet's Blog</title>
   
 
 
@@ -275,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gimlettt.com/2022/03/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="https://gimlettt.com/2022/03/22/Git%E4%B8%8Esvn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -292,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排序算法</h1>
+          <h1 class="post-title" itemprop="name headline">Git与SVN</h1>
         
 
         <div class="post-meta">
@@ -304,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-18T16:05:33+08:00">
-                2022-03-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-22T00:27:55+08:00">
+                2022-03-22
               </time>
             
 
@@ -327,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/Github/" itemprop="url" rel="index">
+                    <span itemprop="name">Github</span>
                   </a>
                 </span>
 
@@ -364,99 +366,34 @@
       
 
       
-        <p>对学过的排序算法做一个总结，不包括代码（代码废的卑微）<br>假设均为升序</p>
-<h2 id="蛮力法"><a href="#蛮力法" class="headerlink" title="蛮力法"></a>蛮力法</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>简单来说，每次找到最小值放在开头<br>规范一点：<br>1，将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>2，在无序区找出最小的值，将其与无序组第一个值交换，这样，有序组就+1，而无序组待排序列-1；<br>3，重复第二步，直到无序区只剩下一个记录。</p>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>简单来说，有点像小学体育课，老师两两比较身高，交换位置<br>规范一点：<br>1，（同上）将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>2，对无序区从左往右（或从前向后，随便）依次比较相邻记录，从而使较小值前移，较大值后移。一般来说，每次遍历后可以将最大值放到最后；<br>3，重复第二步，直到序列中无反序数对。</p>
-<span id="more"></span>
-
-<h2 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h2><h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>不断对序列二分，二分完了再对子序列分别二分，直到子序列只有一个值；然后比较合并。如[2] [4]，合并之后应该为[2 4]；然后再继续合并，如[2 4]和[3 5]，合并之后就是[2 3 4 5]，以此类推。</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>1，设置一个标兵flag，将数组中值比它小的交换到前面；比它大的交换到后面；<br>2，一次遍历结束后，以flag为中点，将序列分为两段，每段重复第一步；<br>3，当子序列长度为2，遍历结束。</p>
-<h2 id="减治法"><a href="#减治法" class="headerlink" title="减治法"></a>减治法</h2><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>有一、、类似选择排序。<br>1，将整个待排序列分为有序组和无序组，开始时，有序组为0，无序组含所有记录；<br>2，将无序区的第一个记录插入有序区，这样无序区少一个记录，有序区多一个记录；<br>3，重复2，在将无序区记录插入有序区时，插入的值和有序区值比较后插入。直到无序区无记录为止。</p>
-<h3 id="推排序"><a href="#推排序" class="headerlink" title="推排序"></a>推排序</h3><p>（二叉树，我的噩梦）</p>
-<table>
-<thead>
-<tr>
-<th>排序方法</th>
-<th>时间复杂度(最好)</th>
-<th>时间复杂度(最坏)</th>
-<th>时间复杂度(平均)</th>
-<th>空间复杂度</th>
-<th>稳定性</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>直接插入排序</td>
-<td>n</td>
-<td>n^2^</td>
-<td>n^2^</td>
-<td>1</td>
-<td>稳定</td>
-</tr>
-<tr>
-<td>折半插入排序</td>
-<td>nlog<del>2</del>n</td>
-<td>n^2^</td>
-<td>n^2^</td>
-<td>1</td>
-<td>稳定</td>
-</tr>
-<tr>
-<td>冒泡排序</td>
-<td>n</td>
-<td>n^2^</td>
-<td>n^2^</td>
-<td>1</td>
-<td>稳定</td>
-</tr>
-<tr>
-<td>简单选择排序</td>
-<td>n^2^</td>
-<td>n^2^</td>
-<td>n^2^</td>
-<td>1</td>
-<td>稳定</td>
-</tr>
-<tr>
-<td>归并排序</td>
-<td>nlog<del>2</del>n</td>
-<td>nlog<del>2</del>n</td>
-<td>nlog<del>2</del>n</td>
-<td>n</td>
-<td>稳定</td>
-</tr>
-<tr>
-<td>基数排序</td>
-<td>d(n+rd)</td>
-<td>d(n+rd)</td>
-<td>d(n+rd)</td>
-<td>n+rd</td>
-<td>稳定</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td></td>
-<td></td>
-<td>n^1.3^</td>
-<td>1</td>
-<td>不稳定</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>nlog<del>2</del>n</td>
-<td>n^2^</td>
-<td>nlog<del>2</del>n</td>
-<td>log<del>2</del>n</td>
-<td>不稳定</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>nlog<del>2</del>n</td>
-<td>nlog<del>2</del>n</td>
-<td>nlog<del>2</del>n</td>
-<td>1</td>
-<td>不稳定</td>
-</tr>
-</tbody></table>
+        <p>准备面试，似乎有关于Linux的考察，也提到了git与svn（Subversion），所以把搜集到的资料做一下整理。  </p>
+<p>关于我对git的第一印象。因为输入指令的形式太像cmd，所以一开始我把它理解为cmd和power shell类似的工具，但是今天搜了一下才知道，git和svn同属于“版本控制工具”，而cmd和shell属于“命令行解释器”，作用是在用户和内核（硬件的上层）之间起到通讯作用（也就是传达命令）。</p>
+<p>而“版本控制工具”的作用，则不是“用户和内核”，也就是，不是用户和内核，而是用户和文件；并且它记录的并不是文件本身（如不是对某个txt文本内容进行更改），而是记录这些改动和变化，“以便将来查阅特定版本修订情况以及回溯的系统（这句不是很理解，主要是因为我目前对git的使用还没有到回溯这个功能）”，以及“将整个项目都回退到过去某个时间点的状态，你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等”也存疑，这样的话岂不是要很多容量空间？但是也看了一句，说是记录“快照”，暂按不表。</p>
+<p>版本控制工具的主要功能有两个，一个是版本管理，这一点从我搭建博客以及向GitHub push本地文件已经体会到了；另一个就是协作开发，这一点在之前做unityDemo的时候也有所了解，因为我哥要看我的文件，所以才用到的GitHub。 </p>
+<p>下面是关于git与svn的比较。</p>
+<p>有两个链接说的比较好，贴下来记录一下：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Sungeek/p/9152223.html">SVN与Git比较的优缺点差异</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/61259351">版本管理工具——SVN和GIT</a></p>
+<p>我用git是搭建博客以及push本地文件到GitHub；svn好像之前在虚拟机上用Linux的时候用过，具体记不太清了。只记得当时因为是第一次直接输入指令，所以诸多不适应，很排斥（当然现在不能说熟练吧，只能说习惯了）。</p>
+<ol>
+<li>git是分布式的，svn是集中式的<br>我倒是明白“分布”和“集中”的意思和区别，但是对git、svn在这方面的应用没什么接触。只能说，因为使用GitHub，我大概知道git的“分布”到底意味着什么；</li>
+<li>“GIT把内容按元数据方式存储，而SVN是按文件”（这个真不明白）；</li>
+<li>Git 分支和 SVN 的分支不同<br>git的分支我用到的不是很多，因为目前我每次提交文件都只用到一个分支；svn就更不明白了，教程说“分支其实是版本库中的另外一个目录”；</li>
+<li>Git 是全球唯一版本号， SVN是全局唯一版本号<br>首先，版本号是啥？是每次提交文件的编号？还是git本身的版本？“Git 对于每一次提交，通过对文件的内容或目录的结构计算出一个SHA-1 哈希值，得到一个40位的十六进制字符串，Git将此字符串作为版本号”；</li>
+<li>Git 的内容完整性要优于 SVN<br>这一点第四点也提到过，因为git使用SHA-1哈希算法，所以完整性很高。</li>
+</ol>
+<p>以上。目前以我的能力只能理解这些了。</p>
+<p>下面是关于Linux的</p>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p>大三有门课要装虚拟机用Linux，上文也提到，因为是初次直接输入指令进行操作，很不适应也很排斥。印象最深的就是复制粘贴解压这些全要靠输入命令，弄得我无比痛苦。<br>先贴几个收藏链接：<br><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-intro.html">Linux菜鸟</a><br><a target="_blank" rel="noopener" href="http://c.biancheng.net/linux_tutorial/">Linux学习教程，Linux入门教程（超详细）</a><br>以下的都算是根据这三篇的一些个人笔记和总结吧。</p>
+<h2 id="Linux特点："><a href="#Linux特点：" class="headerlink" title="Linux特点："></a>Linux特点：</h2><p>Linux里面一切皆是文件。详见<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2852.html">Linux一切皆文件（包含好处和弊端）</a><br>这个有点印象，尤其是“硬件设备（键盘、监视器、硬盘、打印机）是文件”，因为当时好像想弄音乐播放来着，结果音响似乎表现了这一点；<br>以及“没有盘，只有根目录（&#x2F;）”。</p>
+<p>Linux里面没有后缀名这一说。<br><img src="/2022/03/22/Git%E4%B8%8Esvn/image-20220322011257119.png" alt="image-20220322011257119"><br>这张图简直是我之前的噩梦 </p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/55125557/answer/2308697111">linux系统如何执行没有后缀名的可执行文件? - 知乎用户的回答 </a> </p>
+<p>Windows里所有文件默认都是RWX权限，即可读可写可执行。为了区分程序和文件，需要后缀名。<br>但Linux里文件默认是RW权限，即可读可写，只有带X权限的文件才是程序。<br>如果你直接输入一个命令，Windows和Linux都会在系统默认的程序文件夹下搜索相应的程序，如果找不到就给出错误提示。不过Windows的默认搜索路径里包括了当前文件夹，而Linux基于安全方面的考虑，一般不包括当前文件夹，需要用.&#x2F;明确指出是在当前文件夹中进行搜索，或者写出完整路径。Linux也可以设置成默认搜索路径包括当前文件夹。</p>
+</blockquote>
+<p>搜了一下，原来后缀并不是必要的，而是为了人性化识别，文件扩展名是可以人为设定的。有扩展名无非是省略了选择打开程序，直接用默认程序打开。在Windows中，exe后缀是可执行文件，也就是程序。</p>
+<p>Linux的目录结构：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38407447/article/details/90581454">Linux基础入门（详细版）</a><br>&#x2F;bin：是Binary的缩写，这个目录存放着系统必备执行命令<br>&#x2F;boot：这里存放的是启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件，自己的安装别放这里<br>&#x2F;dev：Device(设备)的缩写，该目录下存放的是Linux的外部设备，在Linux中访问设备的方式和访问文件的方式是相同的。<br>&#x2F;etc：所有的系统管理所需要的配置文件和子目录。<br>&#x2F;home：存放普通用户的主目录，在Linux中每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的。<br>&#x2F;lib：系统开机所需要最基本的动态连接共享库，其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。<br>&#x2F;lost+found：这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。<br>&#x2F;media：linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。<br>&#x2F;misc: 该目录可以用来存放杂项文件或目录，即那些用途或含义不明确的文件或目录可以存放在该目录下。<br>&#x2F;mnt：系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在&#x2F;mnt&#x2F;上，然后进入该目录就可以查看光驱里的内容了。<br>&#x2F;net  存放着和网络相关的一些文件.<br>&#x2F;opt：这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。<br>&#x2F;proc：这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>&#x2F;root：该目录为系统管理员，也称作超级权限者的用户主目录。<br>&#x2F;sbin：s就是Super User的意思，这里存放的是系统管理员使用的系统管理程序。<br>&#x2F;selinux：这个目录是Redhat&#x2F;CentOS所特有的目录，Selinux是一个安全机制，类似于windows的防火墙<br>&#x2F;srv：service缩写，该目录存放一些服务启动之后需要提取的数据。<br>&#x2F;sys： 这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。<br>&#x2F;tmp：这个目录是用来存放一些临时文件的。<br>&#x2F;usr： 这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似与windows下的program files目录。<br>&#x2F;var：这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+</blockquote>
 
       
     </div>
@@ -481,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/03/16/%E7%99%BD%E9%A9%AC%E8%B5%B0%E8%BF%87%E5%A4%A9%E4%BA%AE/" rel="next" title="白马走过天亮">
-                <i class="fa fa-chevron-left"></i> 白马走过天亮
+              <a href="/2022/03/21/%E4%B8%89%E4%BC%8F%E8%AF%95%E7%8E%A9%E7%89%88%E6%B8%B8%E6%88%8F%E4%BD%93%E9%AA%8C/" rel="next" title="三伏试玩版游戏体验">
+                <i class="fa fa-chevron-left"></i> 三伏试玩版游戏体验
               </a>
             
           </div>
@@ -490,10 +427,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/" rel="prev" title="毕业论文1.0">
-                毕业论文1.0 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -632,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9B%AE%E5%8A%9B%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">蛮力法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-number">1.1.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-number">1.2.</span> <span class="nav-text">冒泡排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%B2%BB%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">分治法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="nav-number">2.1.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="nav-number">2.2.</span> <span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%8F%E6%B2%BB%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">减治法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-number">3.1.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E6%8E%92%E5%BA%8F"><span class="nav-number">3.2.</span> <span class="nav-text">推排序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">1.</span> <span class="nav-text">Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">Linux特点：</span></a></li></ol></li></ol></div>
             
 
           </div>
