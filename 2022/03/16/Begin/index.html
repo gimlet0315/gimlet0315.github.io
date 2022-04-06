@@ -119,7 +119,7 @@
 <meta property="og:description" content="hexo-theme-next版本：5.1.4（为什么我的版本这么低😓，似乎是默认安装）hexo版本：6.1.0 今天遇到了很多bug，稍微记录一下首先就是hexo init报错，Cannot find module ‘hexo’ from xxx后来先是更改了管理员权限，把nodejs权限改成users：完全控制然后又用npm cache verify, npm cache clean –fo">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-16T12:53:31.000Z">
-<meta property="article:modified_time" content="2022-03-21T17:45:37.486Z">
+<meta property="article:modified_time" content="2022-04-06T06:48:29.934Z">
 <meta property="article:author" content="Gimlet">
 <meta name="twitter:card" content="summary">
 
@@ -379,6 +379,8 @@
 <p>今天遇到了很多bug，稍微记录一下<br>首先就是hexo init报错，Cannot find module ‘hexo’ from xxx<br>后来先是更改了管理员权限，把nodejs权限改成users：完全控制<br>然后又用npm cache verify, npm cache clean –force<br>npm cache clean –force之后成功了。</p>
 <span id="more"></span>
 
+<p>2022.4.6</p>
+<p>今天加了新的功能，从首页和归档（反正是网站）隐藏文章（不是加密，只是没有访问接口，有链接的话依然可以访问）<br>属性添加hidden: true<br>获取列表用hexo hidden:list</p>
 <p>2022.3.22<br>记录一下hexo常用指令： </p>
 <blockquote>
 <p>hexo s(等价于hexo server)：启动本地服务器，用于预览主题；<br>hexo n(等价于hexo new)：发布新文章；<br>hexo d(等价于hexo deploy)：自动生成网站静态文件，并部署到设定的仓库；<br>hexo clean：清楚缓存文件；<br>hexo g(等价于hexo generate)：hexo s(等价于hexo server)：启动本地服务器，用于预览主题；<br>hexo n(等价于hexo new)：发布新文章；<br>hexo d(等价于hexo deploy)：自动生成网站静态文件，并部署到设定的仓库；<br>hexo n page xxx：新建一个标题为 <code>xxx</code> 的页面，默认链接地址为 <code>主页地址/xxx/</code><br>常用组合：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d;</p>
@@ -409,10 +411,6 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2022/03/15/dislike/" rel="next" title="一点点总结反思">
-                <i class="fa fa-chevron-left"></i> 一点点总结反思
-              </a>
             
           </div>
 
@@ -490,7 +488,7 @@
               
                 <a href="/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
