@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="字符的输出用菜鸟的在线编译尝试了一下，不同形式的s（双引号表示字符串）。 1234char s1&#x3D;s;&#x2F;&#x2F;报错，编译器会把s理解为变量名：‘s’ was not declared in this scope; did you mean ‘s1’char s2&#x3D;&amp;#x27;s&amp;#x27;;char s3&#x3D;115;char s4&#x3D;&amp;#x27;115&amp;#x27;;&#x2F;&#x2F;报错  其中，char s2&amp;#x3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="零散的学习笔记">
+<meta property="og:url" content="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Gimlet&#39;s Blog">
+<meta property="og:description" content="字符的输出用菜鸟的在线编译尝试了一下，不同形式的s（双引号表示字符串）。 1234char s1&#x3D;s;&#x2F;&#x2F;报错，编译器会把s理解为变量名：‘s’ was not declared in this scope; did you mean ‘s1’char s2&#x3D;&amp;#x27;s&amp;#x27;;char s3&#x3D;115;char s4&#x3D;&amp;#x27;115&amp;#x27;;&#x2F;&#x2F;报错  其中，char s2&amp;#x3">
+<meta property="og:locale">
+<meta property="og:image" content="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407132824918.png">
+<meta property="og:image" content="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407171229240.png">
+<meta property="og:image" content="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407171026518.png">
+<meta property="og:image" content="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407171256914.png">
+<meta property="og:image" content="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/v2-c436c4dfe73df560008dd9b1d9135c66_720w.jpg">
+<meta property="og:image" content="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/v2-522279de64781e658f4bf8478cb218f4_720w.jpg">
+<meta property="article:published_time" content="2022-04-07T05:20:46.000Z">
+<meta property="article:modified_time" content="2022-04-07T11:37:52.578Z">
+<meta property="article:author" content="Gimlet">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407132824918.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gimlettt.com/2022/04/07/零散的学习笔记/"/>
+
+
+
+
+<link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+
+  <title>零散的学习笔记 | Gimlet's Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gimlet's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">比昨天努力一点点！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gimlet's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">零散的学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-07T13:20:46+08:00">
+                2022-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="字符的输出"><a href="#字符的输出" class="headerlink" title="字符的输出"></a>字符的输出</h1><p>用菜鸟的在线编译尝试了一下，不同形式的s（双引号表示字符串）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">char s1=s;//报错，编译器会把s理解为变量名：‘s’ was not declared in this scope; did you mean ‘s1’</span><br><span class="line">char s2=&#x27;s&#x27;;</span><br><span class="line">char s3=115;</span><br><span class="line">char s4=&#x27;115&#x27;;//报错</span><br></pre></td></tr></table></figure>
+
+<p>其中，char s2&#x3D;’s’和char s3&#x3D;115;的结果相同：输出s；<br><img src="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407132824918.png" alt="image-20220407132824918"><br>char&#x3D;‘xx’输出失败的原因是这是字符不是字符串，只能单个<br>总结：<br>输出字符（不是字符串)的方法有两个，一个是单引号加字符（无论这个字符是数字、字母还是符号)，另一个是不加引号的数字，即ASCII码。<br>不加引号输出单个字符，达咩，不行，会报错。原因也在上面解释过了，编译器会把它理解为变量名（我是这样理解的)。<br>如果你要存储数字，那么同样需要带’’单引号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//用数组存储字符串</span><br><span class="line">char dog[8]=&#123;&#x27;b&#x27;,&#x27;e&#x27;,&#x27;a&#x27;,&#x27;u&#x27;,&#x27;x&#x27;,&#x27;I&#x27;,&#x27;I&#x27;&#125;;</span><br><span class="line">char cat[8]=&#123;&#x27;f&#x27;,&#x27;a&#x27;,&#x27;t&#x27;,&#x27;t&#x27;,&#x27;s&#x27;,&#x27;a&#x27;,&#x27;u&#x27;,&#x27;\0&#x27;&#125;;</span><br><span class="line">dog不是字符串，因为不是\0结尾；cat是字符串</span><br><span class="line">这两个的区别在于，cout逐个处理字符串，如果是dog，那么读取完数组后不会停止，会继续读取这段内存后的内容，直到遇到\0停止，也就是说，除了beauxII这八个字符，还会有其他字符被读出</span><br><span class="line">但是用&quot;&quot;引起的字符会隐式包括空字符，也就是就算你没有写\0，系统也会自动给你加上。</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">strlen()：1，数组中字符串的长度；2，只计算可见字符</span><br><span class="line">   char a[10]=&quot;aa bb cc&quot;;</span><br><span class="line">	cout&lt;&lt;a&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;strlen(a)&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;sizeof(a)&lt;&lt;endl;</span><br><span class="line">输出：</span><br><span class="line">aa bb cc</span><br><span class="line">8</span><br><span class="line">10</span><br><span class="line">又做了两个实验：</span><br><span class="line">1，aabbcc</span><br><span class="line">   char name[10]=&quot;aabbcc&quot;;</span><br><span class="line">	name[4]=&#x27;\0&#x27;;</span><br><span class="line">	cout &lt;&lt; name;</span><br><span class="line">输出：aabb</span><br><span class="line">2，aa bbcc</span><br><span class="line">char name[10]=&quot;aa bbcc&quot;;</span><br><span class="line">cout &lt;&lt; name;</span><br><span class="line">输出：aa bbcc</span><br><span class="line">char name[10]=&quot;aa bbcc&quot;;</span><br><span class="line">name[4]=&#x27;\0&#x27;;</span><br><span class="line">cout &lt;&lt; name;</span><br><span class="line">输出：aa b</span><br><span class="line">这里我做了一个测试，如果name[2]的空格（即aabb之间的空格）以&#x27;\0&#x27;存储，输出1111，不然输出333，结果输出333</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407171229240.png" alt="image-20220407171229240"><br>经查阅，32表示空格：<img src="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407171026518.png" alt="image-20220407171026518"><br>而0表示空字符：<img src="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407171256914.png" alt="image-20220407171256914"></p>
+<p>终于搞懂了！<br>“空字符”和“空格字符”是完全不一样的。空格字符是一种字符，可以输入，ascii编码为32；而“空字符”表示null，\0，不是输入的字符，而是自动添加的。</p>
+<p>综上，strlen的“可见字符”，包括了“空格字符”。</p>
+<p>这里贴一个链接<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/348535438">【C语言笔记】ASCII码可见字符与不可见字符！ - C语言编程俱乐部的文章 - 知乎 </a>，放几张图<br><img src="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/v2-c436c4dfe73df560008dd9b1d9135c66_720w.jpg" alt="img"><br><img src="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/v2-522279de64781e658f4bf8478cb218f4_720w.jpg" alt="img"><br><a target="_blank" rel="noopener" href="http://c.biancheng.net/c/ascii/">ASCII码一览表，ASCII码对照表</a><br>其中可显示&#x2F;打印字符，包括从32（空格)开始，到126（~)为止的95个字符；其他的字符不属于“可见字符”，转义字符就在其中，属于“不可见字符”（但不可见字符不都是转义字符)。</p>
+<h1 id="字符串输入"><a href="#字符串输入" class="headerlink" title="字符串输入"></a>字符串输入</h1><h2 id="cin"><a href="#cin" class="headerlink" title="cin"></a>cin</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[10];</span><br><span class="line">	char b[10];</span><br><span class="line">	cin &gt;&gt; a ;</span><br><span class="line">	cin &gt;&gt; b;//注意和初始化种a=&quot;aa bb cc&quot;区分开；</span><br><span class="line">	cout &lt;&lt; &quot;a   :&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;b   :&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">输入：</span><br><span class="line">aaa bbb</span><br><span class="line">或</span><br><span class="line">aaa</span><br><span class="line">bbb</span><br><span class="line">输出：</span><br><span class="line">a   :aaa</span><br><span class="line">b   :bbb</span><br><span class="line">即，cin用空白（空格space、制表符、换行符enter）确定结束位置，并自动在结尾添加&#x27;\0&#x27;</span><br><span class="line">注，这里，就算我在aaabbb之间多加了enter，即，space、enter、tab组合重复使用，字符串不保存这些空白，输出还是只有bbb，而不包括前面的空白</span><br></pre></td></tr></table></figure>
+
+<p>这里有一个新问题<br>拿越界操作，<br>输入：<br>12345678901234567890<br>qwer<br>输出：<br>a   :12345678901234567890<br>b   :qwer<br>在我声明a[10]的情况下，依然输出（虽然VS报错了：Run-Time Check Failure #2 - Stack around the variable ‘a’ was corrupted.即越界）。 这一点C++ PrimerPlus也提到了：“<em>不能防止将包含30个字符的字符串放到20个字符的数组中的情况发生</em>”。<br>&#x3D;&#x3D;这里插一下之前搜到的为什么编译器不检查是否越界，主要有两方面的原因。一个是这样会影响运行效率，另一个是不利于动态分配数组空间，这两个都比较好理解&#x3D;&#x3D; </p>
+<h2 id="getline-和get-，面向行的输入"><a href="#getline-和get-，面向行的输入" class="headerlink" title="getline()和get()，面向行的输入"></a>getline()和get()，面向行的输入</h2><p>和cin的区别就是，这两个用换行符enter作为判断输入结束的标志 </p>
+<h3 id="getline"><a href="#getline" class="headerlink" title="getline()"></a>getline()</h3><p>cin.getline(a,b);<br>a表示用来存储输入行的数组的名称；<br>b表示读取的字符数，包括末尾的’\0’，即，如果参数为20，那最多读取19个字符，最后一个空间自动用来存储结尾的空字符<br>getline()停止的两个条件（二选一）：1，遇到换行符enter；2，读取指定数目的字符 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">//两个getline</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[10];</span><br><span class="line">	char b[10];</span><br><span class="line">	cin .getline(a,5);</span><br><span class="line">	cin.getline(b, 3);</span><br><span class="line">	cout &lt;&lt; &quot;a   :&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;b   :&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">输入：</span><br><span class="line">1234567890</span><br><span class="line">输出：</span><br><span class="line">a   :1234</span><br><span class="line">b   :</span><br><span class="line">//why？因为当1234被读取后，getline(a,5)的调用就结束了，下一步getline(b,3)调用的是换行符，所以最终为空</span><br><span class="line">输入：</span><br><span class="line">2 3</span><br><span class="line">2</span><br><span class="line">输出：</span><br><span class="line">a   :2 3//空格被储存</span><br><span class="line">b   :2</span><br><span class="line">输入：</span><br><span class="line">233</span><br><span class="line">  3</span><br><span class="line">输出：</span><br><span class="line">a   :233</span><br><span class="line">b   :</span><br><span class="line">//空格未被储存，如果strlen(b)，会是2（空格被保存，不包括&#x27;\0&#x27;，3因为越界未被存储）</span><br></pre></td></tr></table></figure>
+
+<p>总结：getline不保存换行符，而用’\0’替换换行符</p>
+<h3 id="get"><a href="#get" class="headerlink" title="get()"></a>get()</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[10];</span><br><span class="line">	char b[10];</span><br><span class="line">	cin .get(a,5);</span><br><span class="line">	cin.get(b, 5);</span><br><span class="line">	cout &lt;&lt; &quot;a   :&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;b   :&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">输入：12345</span><br><span class="line">输出：</span><br><span class="line">a   :1234</span><br><span class="line">b   :5</span><br><span class="line">输入：12</span><br><span class="line">输出：</span><br><span class="line">a   :12</span><br><span class="line">b   :</span><br><span class="line">//调用get(b, 5)的时候读取的是enter</span><br></pre></td></tr></table></figure>
+
+<p>改进版1： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[10];</span><br><span class="line">	char b[10];</span><br><span class="line">	cin .get(a,5);</span><br><span class="line">	cin.get();//加了一行</span><br><span class="line">	cin.get(b, 5);</span><br><span class="line">	cout &lt;&lt; &quot;a   :&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;b   :&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">输入：</span><br><span class="line">123</span><br><span class="line">4</span><br><span class="line">输出：</span><br><span class="line">a   :123</span><br><span class="line">b   :4</span><br><span class="line">but输入：</span><br><span class="line">2343453</span><br><span class="line">输出：</span><br><span class="line">a   :2343</span><br><span class="line">b   :53</span><br></pre></td></tr></table></figure>
+
+<p>改进版2： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[10];</span><br><span class="line">	char b[10];</span><br><span class="line">	cin.get(a, 5).get();</span><br><span class="line">	cin.get(b, 5);</span><br><span class="line">	cout &lt;&lt; &quot;a   :&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;b   :&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">输入：</span><br><span class="line">12345</span><br><span class="line">输出：</span><br><span class="line">a   :1234</span><br><span class="line">b   :</span><br><span class="line">输入：</span><br><span class="line">123</span><br><span class="line">456</span><br><span class="line">输出：</span><br><span class="line">a   :123</span><br><span class="line">b   :456</span><br><span class="line">输入：1234567</span><br><span class="line">输出：</span><br><span class="line">a   :1234</span><br><span class="line">b   :67</span><br></pre></td></tr></table></figure>
+
+<p>C++ PrimerPlus提到，使用get而不是getline是因为，1，老式没有getline，2，“<em>如何知道停止读取的原因是由于读取了整行还是数组填满呢？查看下一个输入字符，如果是换行符，说明读取了整行；否则，说明该行中还有其他输入</em>”<br>这段不是很明白，做了一下测试： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[10];</span><br><span class="line">	char b[10];</span><br><span class="line">	cin.get(a, 5);</span><br><span class="line">	cin.get();</span><br><span class="line">	cin.get(b, 5);</span><br><span class="line">	cout &lt;&lt; &quot;a   :&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;b   :&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; strlen(b) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; int(b[0]);</span><br><span class="line">&#125;</span><br><span class="line">1，输入12345678，越界</span><br><span class="line">输出：</span><br><span class="line">a   :1234</span><br><span class="line">b   :678</span><br><span class="line">3</span><br><span class="line">54//不是空字符</span><br><span class="line">2，输入</span><br><span class="line">12</span><br><span class="line">234</span><br><span class="line">输出：</span><br><span class="line">a   :12</span><br><span class="line">b   :234</span><br><span class="line">3</span><br><span class="line">50</span><br><span class="line">//不知道是不是我没保存的原因，使用的上一个代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="奇妙的组合"><a href="#奇妙的组合" class="headerlink" title="奇妙的组合"></a>奇妙的组合</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//getline+cin</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[10];</span><br><span class="line">	char b[10];</span><br><span class="line">	cin .getline(a,5);</span><br><span class="line">	cin &gt;&gt; b;</span><br><span class="line">	cout &lt;&lt; &quot;a   :&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;b   :&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">输入：23456789</span><br><span class="line">输出：</span><br><span class="line">a   :2345</span><br><span class="line">b :</span><br></pre></td></tr></table></figure>
+
+<p>关于输入的一些理解：<br>要“静态”地去理解它，不是一边输入一边输出，要有“缓冲区”的概念，输入，输入的所有（包括换行符）都存在缓冲区内，然后从缓冲区内调用get或cin函数，这样好解释一些。<br>这里插一下C中scanf输入数据的截止判定：<br>1，遇到空格、回车、tab<br>2，输入域宽度<br>3，非法输入。例如scanf(“%d”,&amp;a)，如果输入的是12a3enter，a的值为12，字符a和字符a后的数字3都是非法输入<br>所以重点就是&#x3D;&#x3D;怎么判定数据停止输入的截止&#x3D;&#x3D;以及&#x3D;&#x3D;什么时候调用&#x3D;&#x3D;！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/03/22/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="next" title="数据库">
+                <i class="fa fa-chevron-left"></i> 数据库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gimlet0315" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:a2693212610@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%9A%84%E8%BE%93%E5%87%BA"><span class="nav-number">1.</span> <span class="nav-text">字符的输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">字符串输入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cin"><span class="nav-number">2.1.</span> <span class="nav-text">cin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getline-%E5%92%8Cget-%EF%BC%8C%E9%9D%A2%E5%90%91%E8%A1%8C%E7%9A%84%E8%BE%93%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">getline()和get()，面向行的输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#getline"><span class="nav-number">2.2.1.</span> <span class="nav-text">getline()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get"><span class="nav-number">2.2.2.</span> <span class="nav-text">get()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%87%E5%A6%99%E7%9A%84%E7%BB%84%E5%90%88"><span class="nav-number">2.2.3.</span> <span class="nav-text">奇妙的组合</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-[object Object]"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gimlet</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+</html>
