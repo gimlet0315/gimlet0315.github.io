@@ -111,15 +111,11 @@
 
 
 
-<meta name="description" content="hexo-theme-next版本：5.1.4（为什么我的版本这么低😓，似乎是默认安装）hexo版本：6.1.0 今天遇到了很多bug，稍微记录一下首先就是hexo init报错，Cannot find module ‘hexo’ from xxx后来先是更改了管理员权限，把nodejs权限改成users：完全控制然后又用npm cache verify, npm cache clean –fo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Begin!">
-<meta property="og:url" content="https://gimlettt.com/2022/03/16/Begin/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gimlet&#39;s Blog">
+<meta property="og:url" content="https://gimlettt.com/page/5/index.html">
 <meta property="og:site_name" content="Gimlet&#39;s Blog">
-<meta property="og:description" content="hexo-theme-next版本：5.1.4（为什么我的版本这么低😓，似乎是默认安装）hexo版本：6.1.0 今天遇到了很多bug，稍微记录一下首先就是hexo init报错，Cannot find module ‘hexo’ from xxx后来先是更改了管理员权限，把nodejs权限改成users：完全控制然后又用npm cache verify, npm cache clean –fo">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-03-16T12:53:31.000Z">
-<meta property="article:modified_time" content="2022-04-08T05:54:11.601Z">
 <meta property="article:author" content="Gimlet">
 <meta name="twitter:card" content="summary">
 
@@ -151,14 +147,14 @@
 
 
 
-  <link rel="canonical" href="https://gimlettt.com/2022/03/16/Begin/"/>
+  <link rel="canonical" href="https://gimlettt.com/page/5/"/>
 
 
 
 
 <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
 
-  <title>Begin! | Gimlet's Blog</title>
+  <title>Gimlet's Blog</title>
   
 
 
@@ -177,7 +173,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -260,9 +257,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -292,7 +289,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Begin!</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/03/16/Begin/" itemprop="url">Begin!</a></h1>
         
 
         <div class="post-meta">
@@ -375,22 +374,17 @@
       
 
       
-        <p>hexo-theme-next版本：5.1.4（为什么我的版本这么低😓，似乎是默认安装）<br>hexo版本：6.1.0</p>
+        
+          <p>hexo-theme-next版本：5.1.4（为什么我的版本这么低😓，似乎是默认安装）<br>hexo版本：6.1.0</p>
 <p>今天遇到了很多bug，稍微记录一下<br>首先就是hexo init报错，Cannot find module ‘hexo’ from xxx<br>后来先是更改了管理员权限，把nodejs权限改成users：完全控制<br>然后又用npm cache verify, npm cache clean –force<br>npm cache clean –force之后成功了。</p>
-<span id="more"></span>
-
-<p>2022.4.8<br>错误记录：Filename too long的问题<br>原因：<em>在windows操作系统中，允许比较长的文件名称这个设置项默认是关闭(<strong>false</strong>)的。</em><br>解决：git config –global core.longpaths true</p>
-<p><a target="_blank" rel="noopener" href="http://afarx.com/2018/02/19/hexo-code-block/">Hexo自定义代码块颜色、字体、高亮</a> </p>
-<p>2022.4.6</p>
-<p>今天加了新的功能，从首页和归档（反正是网站）隐藏文章（不是加密，只是没有访问接口，有链接的话依然可以访问）<br>属性添加hidden: true<br>获取列表用hexo hidden:list</p>
-<p>2022.3.22<br>记录一下hexo常用指令： </p>
-<blockquote>
-<p>hexo s(等价于hexo server)：启动本地服务器，用于预览主题；<br>hexo n(等价于hexo new)：发布新文章；<br>hexo d(等价于hexo deploy)：自动生成网站静态文件，并部署到设定的仓库；<br>hexo clean：清楚缓存文件；<br>hexo g(等价于hexo generate)：hexo s(等价于hexo server)：启动本地服务器，用于预览主题；<br>hexo n(等价于hexo new)：发布新文章；<br>hexo d(等价于hexo deploy)：自动生成网站静态文件，并部署到设定的仓库；<br>hexo n page xxx：新建一个标题为 <code>xxx</code> 的页面，默认链接地址为 <code>主页地址/xxx/</code><br>常用组合：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d;</p>
-</blockquote>
-<p>2022.3.16<br>不过插一下前情：<br>本来我的电脑是固态硬盘，而不是跟的教程里的分C、D盘。所以在更改环境变量的时候出了问题<br>1，新建node_cache、node_global文件夹之后，改系统变量。不过我当时node_global文件夹下还未生成node_modules子文件夹<br>2，更改用户变量后，明明已经把Roaming下npm变量删掉了，结果后来重启重新查看的时候发现不知道什么时候又出来了<br>3，因为2，导致我很多包比如webpack、hexo全都按到了Roaming&#x2F;npm下，后来又重复步骤很多次<br>4，接着就是开头的问题，在blog文件夹下安装hexo，一直安不了。<br>总之，虽然不清楚到底是权限还是变量没配好的原因，总算是又继续朝后推进了一点点</p>
-<p>后来就比较顺利了。稍微说一下部署next主题时遇到的问题<br>next默认四个主题：Muse、 Mist、Pisces、 Gemini，其中有一些设置只是only for（Muse、 Mist）。我折腾主题的时候，可能因为改了一些显示，比如时间线和目录之类的，直接导致网页打开白板。我非常讨厌bug，加上又是在git bush里下的命令，所以没办法，只能慢慢找。不过git bush还是非常人性化的，直接给我标出了文件的哪一行，config.yml注释也很清晰，所以最后还是比较顺利。</p>
-<p>一些only for：<br>1，sidebar:<br>  Sidebar Position, available value: left | right (only for Pisces | Gemini).<br>2，Sidebar Display, available value (only for Muse | Mist):<br>3，Sidebar offset from top menubar in pixels (only for Pisces | Gemini).<br>4，Back to top in sidebar (only for Pisces | Gemini).<br>5， Enable sidebar on narrow view (only for Muse | Mist).<br>6， coll_header: slideLeftIn<br>    # Only for Pisces | Gemini.<br>    sidebar: slideUpIn<br>大概就是这些</p>
-
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2022/03/16/Begin/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -407,28 +401,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/03/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="prev" title="排序算法">
-                排序算法 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -438,11 +416,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
+
 
 
           </div>
@@ -450,10 +431,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -678,10 +655,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
