@@ -111,11 +111,15 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Gimlet&#39;s Blog">
-<meta property="og:url" content="https://gimlettt.com/index.html">
+<meta name="description" content="why，what，how 以本次毕业论文的流程为例：我的研究课题是，学习风格与成绩的关系，大概分这几大步：  对学习风格进行聚类 分析特征与成绩之间的相关性 随机森林进行二分类  其中，比较重要的是第二步。 聚类本次使用的是k-means，比较经典的算法。这里简单总结一些概念。聚类和分类放一起区分比较好，已经说烂的东西：聚类是“无监督”学习，也就是“无标签”；分类则是“监督”“有标签”。简单来说就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="相关、假设检验、回归">
+<meta property="og:url" content="https://gimlettt.com/2022/04/17/%E7%9B%B8%E5%85%B3%E5%9B%9E%E5%BD%92/index.html">
 <meta property="og:site_name" content="Gimlet&#39;s Blog">
+<meta property="og:description" content="why，what，how 以本次毕业论文的流程为例：我的研究课题是，学习风格与成绩的关系，大概分这几大步：  对学习风格进行聚类 分析特征与成绩之间的相关性 随机森林进行二分类  其中，比较重要的是第二步。 聚类本次使用的是k-means，比较经典的算法。这里简单总结一些概念。聚类和分类放一起区分比较好，已经说烂的东西：聚类是“无监督”学习，也就是“无标签”；分类则是“监督”“有标签”。简单来说就">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-04-17T11:03:43.000Z">
+<meta property="article:modified_time" content="2022-04-18T04:29:14.508Z">
 <meta property="article:author" content="Gimlet">
 <meta name="twitter:card" content="summary">
 
@@ -147,14 +151,14 @@
 
 
 
-  <link rel="canonical" href="https://gimlettt.com/"/>
+  <link rel="canonical" href="https://gimlettt.com/2022/04/17/相关回归/"/>
 
 
 
 
 <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
 
-  <title>Gimlet's Blog</title>
+  <title>相关、假设检验、回归 | Gimlet's Blog</title>
   
 
 
@@ -173,8 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,408 +260,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gimlet's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">零散的学习笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-07T13:20:46+08:00">
-                2022-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="字符的输出"><a href="#字符的输出" class="headerlink" title="字符的输出"></a>字符的输出</h1><p>用菜鸟的在线编译尝试了一下，不同形式的s（双引号表示字符串）。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">char s1=s;//报错，编译器会把s理解为变量名：‘s’ was not declared in this scope; did you mean ‘s1’</span><br><span class="line">char s2=&#x27;s&#x27;;</span><br><span class="line">char s3=115;</span><br><span class="line">char s4=&#x27;115&#x27;;//报错</span><br></pre></td></tr></table></figure>
-
-<p>其中，char s2&#x3D;’s’和char s3&#x3D;115;的结果相同：输出s；<br><img src="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407132824918.png" alt="image-20220407132824918"><br>char&#x3D;‘xx’输出失败的原因是这是字符不是字符串，只能单个<br>总结：<br>输出字符（不是字符串)的方法有两个，一个是单引号加字符（无论这个字符是数字、字母还是符号)，另一个是不加引号的数字，即ASCII码。<br>不加引号输出单个字符，达咩，不行，会报错。原因也在上面解释过了，编译器会把它理解为变量名（我是这样理解的)。<br>如果你要存储数字，那么同样需要带’’单引号</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//用数组存储字符串</span><br><span class="line">char dog[8]=&#123;&#x27;b&#x27;,&#x27;e&#x27;,&#x27;a&#x27;,&#x27;u&#x27;,&#x27;x&#x27;,&#x27;I&#x27;,&#x27;I&#x27;&#125;;</span><br><span class="line">char cat[8]=&#123;&#x27;f&#x27;,&#x27;a&#x27;,&#x27;t&#x27;,&#x27;t&#x27;,&#x27;s&#x27;,&#x27;a&#x27;,&#x27;u&#x27;,&#x27;\0&#x27;&#125;;</span><br><span class="line">dog不是字符串，因为不是\0结尾；cat是字符串</span><br><span class="line">这两个的区别在于，cout逐个处理字符串，如果是dog，那么读取完数组后不会停止，会继续读取这段内存后的内容，直到遇到\0停止，也就是说，除了beauxII这八个字符，还会有其他字符被读出</span><br><span class="line">但是用&quot;&quot;引起的字符会隐式包括空字符，也就是就算你没有写\0，系统也会自动给你加上。</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gimlettt.com/2022/04/19/%E6%89%92%E4%B8%80%E4%B8%8B%E5%A4%A7%E4%BD%AC%E5%81%9A%E7%9A%84%E9%A9%AC%E9%87%8C%E5%A5%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gimlet's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/04/19/%E6%89%92%E4%B8%80%E4%B8%8B%E5%A4%A7%E4%BD%AC%E5%81%9A%E7%9A%84%E9%A9%AC%E9%87%8C%E5%A5%A5/" itemprop="url">扒一下大佬做的马里奥</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-19T13:31:02+08:00">
-                2022-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>忘了哪里下载的了。</p>
-<p>先记一下感兴趣的点：</p>
-<ol>
-<li>小怪互相碰撞之后会转向运动；</li>
-<li>金币箱子连续碰撞多个金币掉落；</li>
-<li>小怪的伤害判定与墙壁的伤害判定（这个demo里只有栗子小子，没有乌龟）；</li>
-</ol>
-<p>存在的小bug：</p>
-<ol>
-<li>滞空判定。有时候缝隙掉不下去，显示滞空；</li>
-<li>速度不稳定</li>
-</ol>
-<h1 id="Physics2D"><a href="#Physics2D" class="headerlink" title="Physics2D"></a>Physics2D</h1><p>一篇博文里提到：“射线应用范围比较广， 多用于碰撞检测（如：子弹飞行是否击中目标）、角色移动等”。(角色移动？)所以开始搜Physics2D的用法。<br><a target="_blank" rel="noopener" href="https://docs.unity3d.com/ScriptReference/Physics2D.html">Unity - Scripting API: Physics2D (unity3d.com)</a>先把官方文档放上来。</p>
-<p>Physics2D是一个大类，里面包括很多函数。在这个demo里的PlayerControl里脚本里有两个地方用到了Physics2D的Raycast函数。一个是向下发射，用来检测isonGround；另一个是左右发射，用来检测障碍物（敌人、道具之类）。<br>Physics2D.Raycast的用法：<br>Physics2D.Raycast(Vector2 origin, Vector2direction, float distance &#x3D; Mathf.Infinity, int layerMask&#x3D; DefaultRaycastLayers, float minDepth&#x3D; -Mathf.Infinity, float maxDepth &#x3D; Mathf.Infinity)。</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>英文释义</th>
-<th>中文释义</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>origin</td>
-<td>The point in 2D space where the ray originates.</td>
-<td>射线出发点</td>
-<td></td>
-</tr>
-<tr>
-<td>direction</td>
-<td>A vector representing the direction of the ray.</td>
-<td>方向</td>
-<td></td>
-</tr>
-<tr>
-<td>distance</td>
-<td>The maximum distance over which to cast the ray.</td>
-<td>投射这条光线的最大距离</td>
-<td></td>
-</tr>
-<tr>
-<td>layerMask</td>
-<td>Filter to detect Colliders only on certain layers.</td>
-<td>射线图层限制</td>
-<td></td>
-</tr>
-<tr>
-<td>minDepth</td>
-<td>Only include objects with a Z coordinate (depth) greater than or equal to this value.</td>
-<td>只包括Z坐标（深度）大于或等于此值的对象</td>
-<td></td>
-</tr>
-<tr>
-<td>maxDepth</td>
-<td>Only include objects with a Z coordinate (depth) less than or equal to this value.</td>
-<td>只包括Z坐标（深度）小于或等于此值的对象</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>脚本中，对于向下射线的使用是这样的：        </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//发射射线并获取射线碰撞到的物体信息：发射起点为玩家自身坐标原点，方向为向下，射线长度为0.1f，只检测第8层</span><br><span class="line">dhit = Physics2D.Raycast(transform.position, Vector2.down, aaa, 1 &lt;&lt; 8);</span><br></pre></td></tr></table></figure>
-
-<p>其中，transform.position为玩家位置；Vector.down即 Vector3(0, -1, 0)，y值为单位负，x和z值为0；这里的aaa是一个public float，玩家自行规定；1 &lt;&lt; 8这个没看懂。是一种格式吗？<br>这里的作用是为了检测是否在地上：如果检测到发生了碰撞：if (dhit.collider)，那么isGround &#x3D; true;如果dhit.collider&#x3D;0，说明玩家此时在空中，所以isGround&#x3D;false。</p>
-<blockquote>
-<p>关于RaycastHit2D</p>
-<p>我的代码基础太差了……首先，脚本中先声明了一个RaycastHit2D类的实例dhit，然后又令dhit &#x3D; Physics2D.Raycast()，接着又调用dhit.collider，这些函数参数是什么？怎么用？返回值又是什么？</p>
-<p>查到的解释：<br><u>RaycastHit2D是一个<strong>结构体</strong>，<em>储存在二维物理中由光线投射检测到的对象的返回信息。</em></u><br><u><em>光线投射用于检测沿光线路径的对象，在概念上类似于向场景中发射激光束并观察哪些对象被其击中。</em></u><br><u><em><strong>Physics2D.Raycast和其他函数使用RaycastHit2D类返回有关由raycasts检测到的对象的信息</strong>。</em></u></p>
-</blockquote>
-<p>向左向右的射线主要是<br>1，根据玩家方向的改变（人物的朝向）改变射线的方向。<br>demo里使用的方法是SpriteRenderer.flipX，flipX是一个布尔值，<em>在 X 轴上翻转精灵</em>。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (f &lt; 0)//左走，f为键盘方向输入</span><br><span class="line">&#123;spr.flipX = true;//反转，这里的true应该是直接传入到游戏中了</span><br><span class="line">hit = Physics2D.Raycast(transform.position,Vector2.left,0.1f,1 &lt;&lt; 8);&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我之前控制朝向用的是rotation：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(f&lt;0)&#123;transform.rotation=Quaternion.Euler(0,-90,0);&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2，当射线没有检测到障碍物（！hit）时移动；有障碍物的话无法移动。不过这里主要是位置不变，走路的动画还是可以播放的。</p>
-<p>在敌人的脚本中，方向控制是怎么用的呢？先规定一个int值，这个值的正负代表了方向，然后直接传入<code>transform.Translate(transform.right * 0.2f * Time.deltaTime * dir);</code></p>
-<p>这段代码挺简洁的，拿上来分析一下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">void Update ()//规定向右为正向</span><br><span class="line">   &#123;      if(Hp &gt; 0)</span><br><span class="line">       &#123;</span><br><span class="line">           transform.Translate(transform.right * 0.2f * Time.deltaTime * dir);</span><br><span class="line">       &#125;//刚说的方向和移动</span><br><span class="line"></span><br><span class="line">       if (dir == 1)</span><br><span class="line">       &#123;</span><br><span class="line">           hit = Physics2D.Raycast(transform.position +Vector3.up*0.1f, Vector2.right, 0.1f, ~(1 &lt;&lt; 9));</span><br><span class="line">       &#125;//当朝右移动时，射线向右发射</span><br><span class="line">       else if (dir == -1)</span><br><span class="line">       &#123;</span><br><span class="line">           hit = Physics2D.Raycast(transform.position+ Vector3.up * 0.1f, Vector2.left, 0.1f, ~(1 &lt;&lt; 9));</span><br><span class="line">       &#125;//当朝左移动时，射线向左发射</span><br><span class="line"></span><br><span class="line">       if (hit.collider)</span><br><span class="line">       &#123;</span><br><span class="line">           dir = -dir;</span><br><span class="line">       &#125;//检测到碰撞时转向</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>和player不同的是，enemy并没有&gt;0，&lt;0的判断，因为玩家用键盘输入并不是1，而是从0到1。所以enemy可以直接和±1比较。</p>
-<h1 id="Rigidbody2D"><a href="#Rigidbody2D" class="headerlink" title="Rigidbody2D"></a>Rigidbody2D</h1><p>看了官方文档，只能说，总算稍微摸到了一点门路。</p>
-<p>Rigidbody2D和rigidbody组件不同（废话）。使用方法是，首先对象要有个Rigidbody2D的组件，然后声明一个Rigidbody2D的变量，接着用GetComponent<Rigidbody2D>()将组件（也就是物体对象）和刚声明的变量联系起来。第一步完成。</p>
-<p>rigidbody2D没有isGravity（rigidbody3D有）的选项，但有一个gravityScale的public float值。</p>
-<h2 id="addforce"><a href="#addforce" class="headerlink" title="addforce"></a>addforce</h2><p>接着就是调用函数。目前使用最多的应该就是跳跃了。调用格式如下：AddForce (Vector2 force, ForceMode2D mode&#x3D; ForceMode2D.Force);<br>如AddForce(Vector2.up * 150);* 前面表示方向，2d只有x、y两个方向可以选择； *后面表示力的大小。</p>
-<table>
-<thead>
-<tr>
-<th>down</th>
-<th>Vector2(0, -1)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>left</td>
-<td>Vector2(-1, 0)</td>
-</tr>
-<tr>
-<td>negativeInfinity</td>
-<td>Vector2(float.NegativeInfinity, float.NegativeInfinity)</td>
-</tr>
-<tr>
-<td>one</td>
-<td>Vector2(1, 1)</td>
-</tr>
-<tr>
-<td>positiveInfinity</td>
-<td>Vector2(float.PositiveInfinity, float.PositiveInfinity)</td>
-</tr>
-<tr>
-<td>right</td>
-<td>Vector2(1, 0)</td>
-</tr>
-<tr>
-<td>up</td>
-<td>Vector2(0, 1)</td>
-</tr>
-</tbody></table>
-<p>2D中ForceMode有两种类型，默认调用ForceMode2D.Force：</p>
-<table>
-<thead>
-<tr>
-<th>Force</th>
-<th>向此 Rigidbody2D 添加连续力，考虑其质量。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Impulse</td>
-<td>向此 rigidbody2D 添加瞬时力冲击，考虑其质量。</td>
-</tr>
-</tbody></table>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -688,9 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/04/17/%E7%9B%B8%E5%85%B3%E5%9B%9E%E5%BD%92/" itemprop="url">相关、假设检验、回归</a></h1>
+          <h1 class="post-title" itemprop="name headline">相关、假设检验、回归</h1>
         
 
         <div class="post-meta">
@@ -762,9 +364,7 @@
       
 
       
-        
-          
-            <p>why，what，how</p>
+        <p>why，what，how</p>
 <p>以本次毕业论文的流程为例：<br>我的研究课题是，学习风格与成绩的关系，大概分这几大步：</p>
 <ul>
 <li>对学习风格进行聚类</li>
@@ -821,8 +421,6 @@
 </tbody></table>
 <p>这两类错误是此消彼长的关系：如果减小α的概率，β的概率就会增大，反之亦然。这和区间估计中精度和可靠性不可兼得的道理相同。如何控制这两类错误？一般来说，我们主要选择控制α。因为从实用主义的角度说，α是非常明确的，但是β所代表的错误更加宽泛，例如，如果μ不能代表ρ，那么μ是大于还是小于ρ？偏离的程度有多大？这些都是非常模糊的。所以我们主要关心，如果原假设正确，我们却拒绝了它——即α，弃真错误的概率。<br>如何检验？依然是抽样分布。如果可以用μ<del>0</del>代替μ，那么样本观察结果应该分布在μ<del>0</del>附近，为了方便理解，可以想象一下正态分布的图像；而假如我们的样本落在了范围外（左右对称，面积之和为α），那么我们就拒绝了原假设，这时就犯了α错误。<br>打个比方，工厂的次品率。假设我们的次品率是10%，即十个里有一个是次品。100个产品里大概会有10个次品。对一百个产品进行检测抽取十个进行检验，如果抽取的十个产品中包含a及a个以上次品，我们就认为这批产品不合格。其实存在一种可能性，这十个次品不幸全被我们抽到了，那显然，我们就判这批产品不合格。然而这批产品也就只有这十个次品，这批产品是合格的。这就是“弃真错误”；取伪错误也好理解。这100个产品里只有十个是合格的，刚好被我们抽中了，因为没有次品，所以我们就认为它合格，实际上是不合格的，我们犯了“取伪”错误。<br>在这个例子中，为了方便理解，我们先假定了这批产品是否合格，也就是描述的，“只有十个次品”或“只有十个合格品”。但实际上，没人有上帝视角，我们不知道这批产品是否合格。所以我们得到的，也仅仅是通过计算得出的α、β的值，通过这些值判断。<br>在上述例子中，α的概率，也就是提到的，“不幸抽中了全部的次品”，这一小概率发生的事件是α。也就是说，如果我们抽的10件次品中，有十件次品，我们判它不合格，有α的可能性是因为运气不好，刚好抽中了所有的次品，这批产品是合格的；剩下1-α的概率就是实际上这批产品就是不合格的概率。<br>取伪的思路相同，不再赘述。</p>
 
-          
-        
       
     </div>
     
@@ -839,12 +437,32 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/04/08/%E9%A9%AC%E9%87%8C%E5%A5%A5%E5%A5%A5%E5%BE%B7%E8%B5%9B%E6%84%9F%E6%83%B3/" rel="next" title="马里奥奥德赛感想">
+                <i class="fa fa-chevron-left"></i> 马里奥奥德赛感想
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/04/19/%E6%89%92%E4%B8%80%E4%B8%8B%E5%A4%A7%E4%BD%AC%E5%81%9A%E7%9A%84%E9%A9%AC%E9%87%8C%E5%A5%A5/" rel="prev" title="扒一下大佬做的马里奥">
+                扒一下大佬做的马里奥 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -854,14 +472,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -869,6 +484,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -889,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -957,6 +585,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%82%98%E9%83%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">肘部方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">相关性分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-number">2.1.</span> <span class="nav-text">一元线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E8%91%97%E6%80%A7%E6%A3%80%E9%AA%8C%EF%BC%88%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%89"><span class="nav-number">2.1.1.</span> <span class="nav-text">显著性检验（！！！！）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1"><span class="nav-number">2.1.2.</span> <span class="nav-text">参数估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="nav-number">2.1.3.</span> <span class="nav-text">区间估计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="nav-number">2.2.</span> <span class="nav-text">假设检验</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1093,6 +737,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

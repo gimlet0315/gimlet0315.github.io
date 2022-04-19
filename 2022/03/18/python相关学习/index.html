@@ -118,18 +118,18 @@
 <meta property="og:site_name" content="Gimlet&#39;s Blog">
 <meta property="og:description" content="论文拖了半个月了，因为自己的拖延症。 我发现我真的很容易摆烂，主要就是犯懒，啥都不想干。其实很多事情做了发现并不是很复杂或者麻烦，稍微认真一点几个小时就搞定了，但是就是拖、懒。 开这篇是记录也是督促自己赶紧把事情做完吧。 时间是2022-03-18 22:50:04，目前的进度是，统计出每周学习行为，把问卷做好发给老师，然后下一步就是进行线性指标的处理了。 昨天去找的老师，老师说这两天弄完。不过昨">
 <meta property="og:locale">
-<meta property="og:image" content="https://gimlettt.com/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318231027522.png">
-<meta property="og:image" content="https://gimlettt.com/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318231254741.png">
-<meta property="og:image" content="https://gimlettt.com/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318232154876.png">
-<meta property="og:image" content="https://gimlettt.com/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318233541351.png">
-<meta property="og:image" content="https://gimlettt.com/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318233612056.png">
-<meta property="og:image" content="https://gimlettt.com/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318234044996.png">
-<meta property="og:image" content="https://gimlettt.com/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318234159288.png">
+<meta property="og:image" content="https://gimlettt.com/image-20220318231027522.png">
+<meta property="og:image" content="https://gimlettt.com/image-20220318231254741.png">
+<meta property="og:image" content="https://gimlettt.com/image-20220318232154876.png">
+<meta property="og:image" content="https://gimlettt.com/image-20220318233541351.png">
+<meta property="og:image" content="https://gimlettt.com/image-20220318233612056.png">
+<meta property="og:image" content="https://gimlettt.com/image-20220318234044996.png">
+<meta property="og:image" content="https://gimlettt.com/image-20220318234159288.png">
 <meta property="article:published_time" content="2022-03-18T14:50:04.000Z">
-<meta property="article:modified_time" content="2022-04-09T07:55:46.067Z">
+<meta property="article:modified_time" content="2022-04-13T08:31:06.142Z">
 <meta property="article:author" content="Gimlet">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gimlettt.com/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318231027522.png">
+<meta name="twitter:image" content="https://gimlettt.com/image-20220318231027522.png">
 
 
 
@@ -385,23 +385,23 @@
 <p>上次找老师是因为遇到了一个bug：</p>
 <p>有两张表，一张记录了学生在网页的活动：比如打开网页、提交作业之类。这个表里有学生的id（因为隐私考虑，似乎是学号的加密），但是没有学生的姓名；另一张表是论坛的发帖情况，不仅有发帖id（和刚才对应的id），也有名字。要做的就是用id连接起来好找到每个学生的活动。</p>
 <p>为了图方便（其实主要是因为python不熟），所以先在excel上进行分列操作。如图所示（已经处理完的），这个属性有三部分：邮箱、手机号（我们学校自己做的系统，用电话登录）以及学号加密的id。这里已经分完列了。</p>
-<p><img src="/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318231027522.png" alt="image-20220318231027522"></p>
+<p><img src="/image-20220318231027522.png" alt="image-20220318231027522"></p>
 <p>遇到的bug是，当我想用替换直接把”}给除掉之后，就会莫名其妙变成第二列所示的情况。</p>
-<p><img src="/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318231254741.png" alt="image-20220318231254741"></p>
+<p><img src="/image-20220318231254741.png" alt="image-20220318231254741"></p>
 <p>这个bug当时没有发现，就直接拿去merge了，所以直接导致我两张表对不上，原本以为是因为这个id号是即时生成的，类似于时间戳，某人某时刻是唯一的，比对不了，所以去找了老师。老师说你随便找一个id查找一下，结果在原始表格中找到了。</p>
 <p>后来我又研究了一下，如果不用替换，用”分列，还是这个结果。但是如果把最后一步的“常规”改成“文本”，就成功了。</p>
-<p><img src="/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318232154876.png" alt="image-20220318232154876"></p>
+<p><img src="/image-20220318232154876.png" alt="image-20220318232154876"></p>
 <p>虽然不知道到底为啥，但是好歹解决了，可以继续进行。</p>
 <p>邪门的事情又来了：</p>
 <p>原始的大表格，就是前面提到的第一个记录了行为数据的表格，共计3598条数据（严格来说是3597，除了表头）</p>
-<p><img src="/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318233541351.png" alt="image-20220318233541351"></p>
+<p><img src="/image-20220318233541351.png" alt="image-20220318233541351"></p>
 <p>但是我合并之后居然有近5w条数据：</p>
-<p><img src="/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318233612056.png" alt="image-20220318233612056"></p>
+<p><img src="/image-20220318233612056.png" alt="image-20220318233612056"></p>
 <p>首先我使用的是左连接，因为只需要在行为表上添加名字，退一万步讲，我帖子的表格也就400+条数据，为什么会飙到4w多？</p>
 <p>不明白，我也检查了一下，发现它又把id弄成了之前bug的那种错误形式。不过我看了一下代码，代码显示的是正常的：</p>
-<p><img src="/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318234044996.png"></p>
+<p><img src="/image-20220318234044996.png"></p>
 <p>没办法。我就想碰碰运气，直接删去重复值。为了保险，我用的全选：</p>
-<p><img src="/2022/03/18/python%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0/image-20220318234159288.png" alt="image-20220318234159288"></p>
+<p><img src="/image-20220318234159288.png" alt="image-20220318234159288"></p>
 <p>最后还真瞎猫碰上死耗子成功了🤧最后剩3597，刚好是去掉表头的数量。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//插一下代码，当作存档，不然每次都要现查🤧🤧🤧</span><br><span class="line">outputpath=<span class="string">&#x27;感悟-直觉.csv&#x27;</span></span><br><span class="line">merge.to_csv(outputpath,sep=<span class="string">&#x27;,&#x27;</span>,index=<span class="literal">False</span>,header=<span class="literal">False</span>)</span><br><span class="line">//中文乱码加encoding=<span class="string">&quot;gbk&quot;</span>（或‘utf-<span class="number">8</span>-sig’、‘utf-<span class="number">8</span>’）</span><br><span class="line">//index：不加索引（前面的<span class="number">0</span>、<span class="number">1</span>、<span class="number">2</span>序列）</span><br><span class="line">//header：表头</span><br></pre></td></tr></table></figure>
 
@@ -550,7 +550,7 @@
               
                 <a href="/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

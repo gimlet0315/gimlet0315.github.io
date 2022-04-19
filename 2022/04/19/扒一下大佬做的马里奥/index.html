@@ -111,11 +111,15 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Gimlet&#39;s Blog">
-<meta property="og:url" content="https://gimlettt.com/index.html">
+<meta name="description" content="忘了哪里下载的了。 先记一下感兴趣的点：  小怪互相碰撞之后会转向运动； 金币箱子连续碰撞多个金币掉落； 小怪的伤害判定与墙壁的伤害判定（这个demo里只有栗子小子，没有乌龟）；  存在的小bug：  滞空判定。有时候缝隙掉不下去，显示滞空； 速度不稳定  Physics2D一篇博文里提到：“射线应用范围比较广， 多用于碰撞检测（如：子弹飞行是否击中目标）、角色移动等”。(角色移动？)所以开始搜P">
+<meta property="og:type" content="article">
+<meta property="og:title" content="扒一下大佬做的马里奥">
+<meta property="og:url" content="https://gimlettt.com/2022/04/19/%E6%89%92%E4%B8%80%E4%B8%8B%E5%A4%A7%E4%BD%AC%E5%81%9A%E7%9A%84%E9%A9%AC%E9%87%8C%E5%A5%A5/index.html">
 <meta property="og:site_name" content="Gimlet&#39;s Blog">
+<meta property="og:description" content="忘了哪里下载的了。 先记一下感兴趣的点：  小怪互相碰撞之后会转向运动； 金币箱子连续碰撞多个金币掉落； 小怪的伤害判定与墙壁的伤害判定（这个demo里只有栗子小子，没有乌龟）；  存在的小bug：  滞空判定。有时候缝隙掉不下去，显示滞空； 速度不稳定  Physics2D一篇博文里提到：“射线应用范围比较广， 多用于碰撞检测（如：子弹飞行是否击中目标）、角色移动等”。(角色移动？)所以开始搜P">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-04-19T05:31:02.000Z">
+<meta property="article:modified_time" content="2022-04-19T08:35:11.803Z">
 <meta property="article:author" content="Gimlet">
 <meta name="twitter:card" content="summary">
 
@@ -147,14 +151,14 @@
 
 
 
-  <link rel="canonical" href="https://gimlettt.com/"/>
+  <link rel="canonical" href="https://gimlettt.com/2022/04/19/扒一下大佬做的马里奥/"/>
 
 
 
 
 <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
 
-  <title>Gimlet's Blog</title>
+  <title>扒一下大佬做的马里奥 | Gimlet's Blog</title>
   
 
 
@@ -173,8 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,159 +260,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gimlettt.com/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gimlet's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">零散的学习笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-07T13:20:46+08:00">
-                2022-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="字符的输出"><a href="#字符的输出" class="headerlink" title="字符的输出"></a>字符的输出</h1><p>用菜鸟的在线编译尝试了一下，不同形式的s（双引号表示字符串）。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">char s1=s;//报错，编译器会把s理解为变量名：‘s’ was not declared in this scope; did you mean ‘s1’</span><br><span class="line">char s2=&#x27;s&#x27;;</span><br><span class="line">char s3=115;</span><br><span class="line">char s4=&#x27;115&#x27;;//报错</span><br></pre></td></tr></table></figure>
-
-<p>其中，char s2&#x3D;’s’和char s3&#x3D;115;的结果相同：输出s；<br><img src="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220407132824918.png" alt="image-20220407132824918"><br>char&#x3D;‘xx’输出失败的原因是这是字符不是字符串，只能单个<br>总结：<br>输出字符（不是字符串)的方法有两个，一个是单引号加字符（无论这个字符是数字、字母还是符号)，另一个是不加引号的数字，即ASCII码。<br>不加引号输出单个字符，达咩，不行，会报错。原因也在上面解释过了，编译器会把它理解为变量名（我是这样理解的)。<br>如果你要存储数字，那么同样需要带’’单引号</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//用数组存储字符串</span><br><span class="line">char dog[8]=&#123;&#x27;b&#x27;,&#x27;e&#x27;,&#x27;a&#x27;,&#x27;u&#x27;,&#x27;x&#x27;,&#x27;I&#x27;,&#x27;I&#x27;&#125;;</span><br><span class="line">char cat[8]=&#123;&#x27;f&#x27;,&#x27;a&#x27;,&#x27;t&#x27;,&#x27;t&#x27;,&#x27;s&#x27;,&#x27;a&#x27;,&#x27;u&#x27;,&#x27;\0&#x27;&#125;;</span><br><span class="line">dog不是字符串，因为不是\0结尾；cat是字符串</span><br><span class="line">这两个的区别在于，cout逐个处理字符串，如果是dog，那么读取完数组后不会停止，会继续读取这段内存后的内容，直到遇到\0停止，也就是说，除了beauxII这八个字符，还会有其他字符被读出</span><br><span class="line">但是用&quot;&quot;引起的字符会隐式包括空字符，也就是就算你没有写\0，系统也会自动给你加上。</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2022/04/07/%E9%9B%B6%E6%95%A3%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -439,9 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/04/19/%E6%89%92%E4%B8%80%E4%B8%8B%E5%A4%A7%E4%BD%AC%E5%81%9A%E7%9A%84%E9%A9%AC%E9%87%8C%E5%A5%A5/" itemprop="url">扒一下大佬做的马里奥</a></h1>
+          <h1 class="post-title" itemprop="name headline">扒一下大佬做的马里奥</h1>
         
 
         <div class="post-meta">
@@ -491,9 +342,7 @@
       
 
       
-        
-          
-            <p>忘了哪里下载的了。</p>
+        <p>忘了哪里下载的了。</p>
 <p>先记一下感兴趣的点：</p>
 <ol>
 <li>小怪互相碰撞之后会转向运动；</li>
@@ -624,8 +473,6 @@
 </tr>
 </tbody></table>
 
-          
-        
       
     </div>
     
@@ -642,209 +489,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gimlettt.com/2022/04/17/%E7%9B%B8%E5%85%B3%E5%9B%9E%E5%BD%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gimlet's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/04/17/%E7%9B%B8%E5%85%B3%E5%9B%9E%E5%BD%92/" itemprop="url">相关、假设检验、回归</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-17T19:03:43+08:00">
-                2022-04-17
-              </time>
+              <a href="/2022/04/17/%E7%9B%B8%E5%85%B3%E5%9B%9E%E5%BD%92/" rel="next" title="相关、假设检验、回归">
+                <i class="fa fa-chevron-left"></i> 相关、假设检验、回归
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>why，what，how</p>
-<p>以本次毕业论文的流程为例：<br>我的研究课题是，学习风格与成绩的关系，大概分这几大步：</p>
-<ul>
-<li>对学习风格进行聚类</li>
-<li>分析特征与成绩之间的相关性</li>
-<li>随机森林进行二分类</li>
-</ul>
-<p>其中，比较重要的是第二步。</p>
-<h1 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h1><p>本次使用的是k-means，比较经典的算法。这里简单总结一些概念。<br>聚类和分类放一起区分比较好，已经说烂的东西：聚类是“无监督”学习，也就是“无标签”；分类则是“监督”“有标签”。简单来说就是，分类是处理的时候已经确定了有几类、分别是什么：有三种水果，分别是苹果、李子、桃子；而聚类则是，首先你不知道几类，另外就是不知道这几类分别是什么。也因此聚类有一个很重要的概念：簇，也就是k值。在聚类前，需要确定有几簇（聚类叫簇，分类叫类）。一般用肘部算法确定最合适的k值，也即分成几类最合适。</p>
-<p>确定簇数的简单方法是，假设数据点为n，则簇数p约为二分之n开根号。</p>
-<p>聚类大概有这些方法：</p>
-<ul>
-<li>基于距离：最常用的方法。原则是同簇的对象距离尽可能接近，不同簇的距离尽可能远。如k-means和k中心。</li>
-<li>基于层次：<br>凝聚：自底向上，开始时每个对象单独做一组，逐步合并相近的对象或组，直到合并为一个组（顶点）或满足规定的条件；<br>分裂：和凝聚相反，自顶向下，开始时所有对象在同一簇，不断迭代为更小的簇，直到每个对象单独一簇或满足规定的条件。<br>不可撤销：即不能纠正错误的合并或划分；可以集成其他技术。</li>
-<li>基于密度：在基于距离的聚类方法中，只能发现球状簇，而不是任意形状的簇。基于密度指的是，在指定簇的每个数据对象中，在给定的半径领域内，必须至少包含最少数目的点。这样一来可以过滤噪声或离群点，还可以发现不同形状的簇。</li>
-<li>基于网格：没看懂，纯抄定义吧：“基于网格的方法把对象空间量化为有限个单元，形成一个网格结构，所有的聚类操作都在这个网格结构（即量化的空间上）进行。这种方法的主要优点是处理速度很快，七处理时间通常独立于数据对象的个数，而仅依赖于量化空间中每一维的单元数”。</li>
-</ul>
-<h2 id="肘部方法"><a href="#肘部方法" class="headerlink" title="肘部方法"></a>肘部方法</h2><p>簇数增多，可以降低每个簇内部数据的方差之和，因为这样对象簇更细；但簇数增多，“则降低簇内方差和的边缘效应可能下降，因为把一个凝聚的簇分裂成两个只引起簇内方差和的稍微降低”，肘方法即使用簇内方差和关于簇内曲线的拐点。</p>
-<h1 id="相关性分析"><a href="#相关性分析" class="headerlink" title="相关性分析"></a>相关性分析</h1><h2 id="一元线性回归"><a href="#一元线性回归" class="headerlink" title="一元线性回归"></a>一元线性回归</h2><ol>
-<li>变量间是否存在相关关系？</li>
-<li>如果存在，是怎样的关系？</li>
-<li>关系强度？</li>
-<li>样本是否能够代表总体？</li>
-</ol>
-<p>首先，相关系数r&#x3D;0不能代表二者没有相关关系，只能说二者不存在“线性相关”。r仅仅是变量之间线性关系的度量，不能描述非线性关系；<br>r只表示“是否相关”，不能推断“因果”之类的。</p>
-<h3 id="显著性检验（！！！！）"><a href="#显著性检验（！！！！）" class="headerlink" title="显著性检验（！！！！）"></a>显著性检验（！！！！）</h3><p>r表示样本的相关系数，ρ表示的总体相关系数。能否用r代替ρ，是统计上非常常见和经典的问题。<br>ρ是客观存在的值，比如，我们知道太阳一定有重量，但是却无法获得，我们测得的只是每次的测量值，即样本值，谁都不知道重量到底是多少。但是样本值一般呈正态分布，它会落在某点m的周围。如果满足假设性显著性检验，那么我们可以用该点m作为客观质量的值。<br>同样，如果“r的值服从正态分布”这一假设成立，那么，我们就可以用r的值代替ρ，即把r当作总体的相关系数。前提是p≤0.05。</p>
-<p>（老实说这部分概念非常有逻辑，是完整的推断，很顺畅；但是经常不用不复习就会忘记，毕竟有点绕🤧🤧🤧）</p>
-<h3 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h3><p>样本统计量估计总体参数</p>
-<p>点估计：样本估计量的某个值直接作为总体参数<br>区间估计：例如平均值μ的估计。样本平均值x已知。</p>
-<h3 id="区间估计"><a href="#区间估计" class="headerlink" title="区间估计"></a>区间估计</h3><p>有个非常经典的规律：样本平均值有68%的概率落在（μ-σ，μ+σ）内，95%的概率落在（μ-2σ，μ+2σ）范围内，有99%的概率落在（μ-3σ，μ+3σ）内。</p>
-<p>但是实际操作中，我们使用样本平均估计μ。所以如果平均值在（μ-σ，μ+σ）内，那么反过来，μ也在平均值的两个标准差范围内。因此，如果95%的概率落在（μ-2σ，μ+2σ）范围内，那么95%的样本均值所构造的两个标准差区间会包括μ，另外5%不包括。所以这95%就是置信区间。</p>
-<blockquote>
-<p>关于“准”和“精确”<br>有68%的概率落在（μ-σ，μ+σ）内，95%的概率落在（μ-2σ，μ+2σ）范围内。那么（μ-2σ，μ+2σ）肯定比（μ-σ，μ+σ）更准，因为它范围更大，这里的准也就是可靠性；而（μ-σ，μ+σ）比（μ-2σ，μ+2σ）更精确，因为它范围变得更小了。</p>
-</blockquote>
-<h2 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h2><p>解释上文的显著性检验。</p>
-<p>在上文“用r值代替ρ”的假设中，这个假设不一定正确，需要有一个与之对立的<strong>备择假设</strong>，即，拒绝原假设，r不能代替ρ。<br>但是这里有两层：一层是我们题目的两个假设；第二层是，我们得出了结论后，这个结论真伪的验证。<br>对于第一层，我们需要使用参数估计计算，得到结论；真正的难点在于第二层：真伪的检验。<br>第二层有两种方向：1，如果我们第一层得到的结论是，原假设成立，接受原假设，那么，我们可能会犯“取伪”错误，也就是实际情况是“否”，然而我们却没有拒绝，犯这类错误的概率记为β，这类错误也被被称为β错误；2，如果我们第一层得到的结论是，原假设不成立，接受备择假设，也就是否，那么，我们可能会犯“弃真”错误，也就是原假设原本是成立的，我们弄错了，拒绝了正确的原假设。犯这类错误的概率记为α，这类错误被称为α错误。<br>总结：α：弃真错误；β：取伪错误。这两个错误都表示我们得出了错误的结论，不过α是错误地认为原假设不成立；而β则是错误地认为原假设成立。因为在这里，我们的对象是研究原假设。</p>
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>接受原假设概率</th>
-<th>拒绝原假设概率</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>原假设为真</td>
-<td>1-α（正确概率）</td>
-<td>α（弃真错误）</td>
-</tr>
-<tr>
-<td>原假设为假</td>
-<td>β（取伪错误）</td>
-<td>1-β（正确概率）</td>
-</tr>
-</tbody></table>
-<p>这两类错误是此消彼长的关系：如果减小α的概率，β的概率就会增大，反之亦然。这和区间估计中精度和可靠性不可兼得的道理相同。如何控制这两类错误？一般来说，我们主要选择控制α。因为从实用主义的角度说，α是非常明确的，但是β所代表的错误更加宽泛，例如，如果μ不能代表ρ，那么μ是大于还是小于ρ？偏离的程度有多大？这些都是非常模糊的。所以我们主要关心，如果原假设正确，我们却拒绝了它——即α，弃真错误的概率。<br>如何检验？依然是抽样分布。如果可以用μ<del>0</del>代替μ，那么样本观察结果应该分布在μ<del>0</del>附近，为了方便理解，可以想象一下正态分布的图像；而假如我们的样本落在了范围外（左右对称，面积之和为α），那么我们就拒绝了原假设，这时就犯了α错误。<br>打个比方，工厂的次品率。假设我们的次品率是10%，即十个里有一个是次品。100个产品里大概会有10个次品。对一百个产品进行检测抽取十个进行检验，如果抽取的十个产品中包含a及a个以上次品，我们就认为这批产品不合格。其实存在一种可能性，这十个次品不幸全被我们抽到了，那显然，我们就判这批产品不合格。然而这批产品也就只有这十个次品，这批产品是合格的。这就是“弃真错误”；取伪错误也好理解。这100个产品里只有十个是合格的，刚好被我们抽中了，因为没有次品，所以我们就认为它合格，实际上是不合格的，我们犯了“取伪”错误。<br>在这个例子中，为了方便理解，我们先假定了这批产品是否合格，也就是描述的，“只有十个次品”或“只有十个合格品”。但实际上，没人有上帝视角，我们不知道这批产品是否合格。所以我们得到的，也仅仅是通过计算得出的α、β的值，通过这些值判断。<br>在上述例子中，α的概率，也就是提到的，“不幸抽中了全部的次品”，这一小概率发生的事件是α。也就是说，如果我们抽的10件次品中，有十件次品，我们判它不合格，有α的可能性是因为运气不好，刚好抽中了所有的次品，这批产品是合格的；剩下1-α的概率就是实际上这批产品就是不合格的概率。<br>取伪的思路相同，不再赘述。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -854,14 +520,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -869,6 +532,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -889,8 +556,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -957,6 +633,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Physics2D"><span class="nav-number">1.</span> <span class="nav-text">Physics2D</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rigidbody2D"><span class="nav-number">2.</span> <span class="nav-text">Rigidbody2D</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#addforce"><span class="nav-number">2.1.</span> <span class="nav-text">addforce</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1093,6 +785,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
